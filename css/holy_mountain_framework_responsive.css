@@ -9,7 +9,7 @@ NOTES
 
 	MEDIA QUERY EXAMPLES
 		- Standard: @media only screen and (max-width : 900px) { 	}
-		- 
+		- IE-only: @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {	}
 
 ********************************************/
 

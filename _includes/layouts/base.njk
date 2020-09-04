@@ -15,7 +15,7 @@
 
 
 		<!-- EXTERNAL CSS -->
-			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" />
 			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" integrity="sha256-zmfNZmXoNWBMemUOo1XUGFfc0ihGGLYdgtJS3KCr/l0=" crossorigin="anonymous" />
 			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css" integrity="sha256-DBYdrj7BxKM3slMeqBVWX2otx7x4eqoHRJCsSDJ0Nxw=" crossorigin="anonymous" />
 
@@ -34,12 +34,15 @@
 
 		<!-- SEO/TRACKING/ANALYTICS -->
 			{% include "head_seo.njk" %}
+
+		<!-- Current page: {{ page.url | url }} -->
+
 	</head>
 
 
 	<body>
 
-		<!-- Current page: {{ page.url | url }} -->
+		
 
 		<!-- Loading Screen - comment out to disable -->
 			<!--{% include "loading_screen.njk" %}-->
@@ -47,18 +50,31 @@
 		<!-- Sidebar Nav - exists outside of body wrapper -->
 			{% include "sidebar_nav.njk" %}
 
-		<!-- Desktop and Mobile navs -->
-			{% include "desktop_nav.njk" %}
-			{% include "mobile_nav.njk" %}
 
-
-		<main{% if templateClass %} class="{{ templateClass }}"{% endif %}>
-			{{ content | safe }}
-		</main>
-
-		{% include "footer.njk" %}
-
+		<div id="body_wrapper" data-body-transform="test">
+			<div id="body_wrapper_inner">
 		
+			<!-- Desktop and Mobile navs -->
+				{% include "desktop_nav.njk" %}
+				{% include "mobile_nav.njk" %}
+
+
+
+			<!-- Content -->
+				<div id="content_wrapper">
+					{{ content | safe }}
+				</div>
+
+			<!-- Footer / Sub Footer -->
+				{% include "footer.njk" %}
+
+			</div>
+		</div>
+
+
+		<!-- Global Modal Overlay -->
+			<div class="modal_overlay"></div>
+
 
 		<!-- Browser detect and add class to document -->
 			<script>
@@ -79,7 +95,7 @@
 				-->
 
 		<!-- INTERNAL JS -->
-			<script src="{{ '/js/script.js' | url }}" crossorigin="samesite"></script>
+			 <script src="{{ '/js/script.js' | url }}"></script>
 			<script src="{{ '/js/holy_mountain_framework.js' | url }}" crossorigin="samesite"></script>
 
 
