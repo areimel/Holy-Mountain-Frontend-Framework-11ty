@@ -48,7 +48,7 @@
 			<!--{% include "loading_screen.njk" %}-->
 
 		<!-- Sidebar Nav - exists outside of body wrapper -->
-			{% include "sidebar_nav.njk" %}
+			{% include "navigation/sidebar_nav.njk" %}
 
 
 		<div id="body_wrapper" data-body-transform="test">
@@ -74,6 +74,13 @@
 
 		<!-- Global Modal Overlay -->
 			<div class="modal_overlay"></div>
+
+		<!-- Modals -->
+			{% include "modals/thank_you_modal.njk" %}
+			{% include "modals/video_modal.njk" %}
+			{% include "modals/form_modal.njk" %}
+			{% include "modals/off_site_modal.njk" %}
+			{% include "modals/launch_checklist_modal.njk" %}
 
 
 		<!-- Browser detect and add class to document -->
