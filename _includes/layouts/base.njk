@@ -1,41 +1,87 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ renderData.title or title or metadata.title }}</title>
-    <meta name="Description" content="{{ renderData.description or description or metadata.description }}">
-    <link rel="stylesheet" href="{{ '/css/index.css' | url }}">
-    <link rel="stylesheet" href="{{ '/css/prism-base16-monokai.dark.css' | url }}">
-    <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
-  </head>
-  <body>
-    <header>
-      <h1 class="home"><a href="{{ '/' | url }}">{{ metadata.title }}</a></h1>
 
-      {#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
-      <ul class="nav">
-      {%- for entry in collections.all | eleventyNavigation %}
-        <li class="nav-item{% if entry.url == page.url %} nav-item-active{% endif %}"><a href="{{ entry.url | url }}">{{ entry.title }}</a></li>
-      {%- endfor %}
-      </ul>
-    </header>
+	<head>
 
-    <main{% if templateClass %} class="{{ templateClass }}"{% endif %}>
-      <div class="warning">
-        <ol>
-          <li>Edit the <code>_data/metadata.json</code> with your blog’s information.</li>
-          <li>(Optional) Edit <code>.eleventy.js</code> with your <a href="https://www.11ty.dev/docs/config/">configuration preferences</a>.</li>
-          <li>Delete this message from <code>_includes/layouts/base.njk</code>.</li>
-        </ol>
-        <p><em>This is an <a href="https://www.11ty.io/">Eleventy project</a> created from the <a href="https://github.com/11ty/eleventy-base-blog"><code>eleventy-base-blog</code> repo</a>.</em></p>
-      </div>
+		<!-- METAS -->
+			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-      {{ content | safe }}
-    </main>
+			<title>{{ renderData.title or title or metadata.title }}</title>
+			<meta name="Description" content="{{ renderData.description or description or metadata.description }}">
+			<link rel="icon" type="image/png" href="/favicon.png">
 
-    <footer></footer>
+			<link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
 
-    <!-- Current page: {{ page.url | url }} -->
-  </body>
+
+		<!-- EXTERNAL CSS -->
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" integrity="sha256-zmfNZmXoNWBMemUOo1XUGFfc0ihGGLYdgtJS3KCr/l0=" crossorigin="anonymous" />
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css" integrity="sha256-DBYdrj7BxKM3slMeqBVWX2otx7x4eqoHRJCsSDJ0Nxw=" crossorigin="anonymous" />
+
+
+		<!-- INTERNAL CSS -->
+			<link type="text/css" href="{{ '/css/variables.css' | url }}" media="all" rel="stylesheet" />
+			<link type="text/css" href="{{ '/css/holy_mountain_framework.css' | url }}" media="all" rel="stylesheet" />
+			<link type="text/css" href="{{ '/css/holy_mountain_framework_responsive.css' | url }}" media="all" rel="stylesheet" />
+			<link type="text/css" href="{{ '/css/style.css' | url }}" media="all" rel="stylesheet" />
+			<link type="text/css" href="{{ '/css/style_responsive.css' | url }}" media="all" rel="stylesheet" />
+
+
+		<!-- GOOGLE FONTS -->
+			<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;700&family=Source+Sans+Pro:wght@300;400;700&family=Special+Elite&display=swap" rel="stylesheet">
+
+
+		<!-- SEO/TRACKING/ANALYTICS -->
+			{% include "head_seo.njk" %}
+	</head>
+
+
+	<body>
+
+		<!-- Current page: {{ page.url | url }} -->
+
+		<!-- Loading Screen - comment out to disable -->
+			<!--{% include "loading_screen.njk" %}-->
+
+		<!-- Sidebar Nav - exists outside of body wrapper -->
+			{% include "sidebar_nav.njk" %}
+
+		<!-- Desktop and Mobile navs -->
+			{% include "desktop_nav.njk" %}
+			{% include "mobile_nav.njk" %}
+
+
+		<main{% if templateClass %} class="{{ templateClass }}"{% endif %}>
+			{{ content | safe }}
+		</main>
+
+		{% include "footer.njk" %}
+
+		
+
+		<!-- Browser detect and add class to document -->
+			<script>
+				var doc = document.documentElement;
+			        doc.setAttribute('data-useragent',  navigator.userAgent);
+			        doc.setAttribute('data-platform', navigator.platform );
+			        doc.className += ((!!('ontouchstart' in window) || !!('onmsgesturechange' in window))?' touch':'');
+			</script>
+
+		<!-- EXTERNAL JS -->
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js" integrity="sha256-GaKOLXTn7uJXFuWp57ukQZGuKK2gWZWlEH16hc6jBU8=" crossorigin="anonymous"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js" integrity="sha256-4sETKhh3aSyi6NRiA+qunPaTawqSMDQca/xLWu27Hg4=" crossorigin="anonymous"></script>
+			
+			<!-- ScrollMagic -->
+				<!-- 
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/jquery.ScrollMagic.min.js" integrity="sha256-vMplzCSo+pO4wcmz/as8FVtabF5gE9Gwqk5ER8jux3w=" crossorigin="anonymous"></script>
+				-->
+
+		<!-- INTERNAL JS -->
+			<script src="{{ '/js/script.js' | url }}" crossorigin="samesite"></script>
+			<script src="{{ '/js/holy_mountain_framework.js' | url }}" crossorigin="samesite"></script>
+
+
+	</body>
 </html>

@@ -1,0 +1,49 @@
+/********************************************
+
+Variables File
+
+	Store all root variable code in this file.  
+ 	This includes:
+ 	- Fonts
+ 	- Colors
+ 	- Pre-made CSS values
+
+ WARNING: 	
+ 	CSS Variables are not currently supported by Internet Explorer.
+ 	Please check: https://caniuse.com/#feat=css-variables
+ 	Using CSS Variables means that a site ABSOLUTELY will not support IE.
+
+ SYNTAX:
+ 	Define: --variable_name: value;
+ 	Use: 	color: var(--variable_name);
+
+ NOTES:
+ 	Variables can be quickly implemented in a CSS file using Find/Replace
+
+********************************************/
+
+/***** Color Variables *****/
+	--black_1: 	#1a1a1a;
+	--white_1: 		#fafafa;
+
+
+/***** Font Size Variables *****/
+	--font_s: 		1.2rem;
+	--font_m: 		1.6rem;
+	--font_l: 		2.4rem;
+	--font_xl: 		4.5rem;
+
+/***** Font Size Variables *****/
+	--font_monospace: 	'IBM Plex Mono', monospace;
+	--font_sans: 			'Source Sans Pro', sans-serif;
+	--font_display: 		'Special Elite', cursive;
+
+/***** Transition Timing Variables *****/
+	--short_transition: 		.25s ease-in-out;
+	--medium_transition: 	.5s ease-in-out;
+	--long_transition: 		1s ease-in-out;
+
+
+/***** Shadow Variables *****/
+	--nice_shadow:
+		0 2.8px 2.2px rgba(0, 0, 0, 0.02),0 6.7px 5.3px rgba(0, 0, 0, 0.028),0 12.5px 10px rgba(0, 0, 0, 0.035),0 22.3px 17.9px rgba(0, 0, 0, 0.042),0 41.8px 33.4px rgba(0, 0, 0, 0.05),0 100px 80px rgba(0, 0, 0, 0.07);

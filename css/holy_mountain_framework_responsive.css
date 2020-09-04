@@ -1,0 +1,136 @@
+/********************************************
+
+NOTES
+
+	- This file is intended to be the basic underlying framework
+	for the site. Overrides to this code should be done 
+	in the style.css file.
+
+
+	MEDIA QUERY EXAMPLES
+		- Standard: @media only screen and (max-width : 900px) { 	}
+		- 
+
+********************************************/
+
+
+/********************************************
+
+GLOBAL TEMPLATE ELEMENTS
+
+********************************************/
+
+	/***** ==================================== *****/
+	/***** template_1 - image/copy side by side *****/
+	/***** ==================================== *****/
+		@media only screen and (max-width : 1350px){
+			.--hm_template_1>.image{
+				width: 500px;
+			}
+			.--hm_template_1>.copy{
+				width: calc(100% - 500px);
+			}
+		}
+
+		@media only screen and (max-width : 950px){
+			.--hm_template_1{
+				flex-direction: column;
+			}
+			.--hm_template_1.mobile_reverse{
+				flex-direction: column-reverse;
+			}
+			.--hm_template_1>.image{
+				width: 100%;
+				height: 500px;
+			}
+			.--hm_template_1>.copy{
+				width: 100%;
+			}
+		}
+		@media only screen and (max-width : 550px){
+			.--hm_template_1>.image{
+				width: 100%;
+				height: 300px;
+			}
+		}
+
+
+	/***** ==================== *****/
+	/***** template_2 - 3 cards *****/
+	/***** ==================== *****/
+		@media only screen and (max-width : 950px){
+			
+
+			.--hm_template_2>.content>.cell{
+				width: 100%;
+			}
+
+			/***** First and Last variants *****/
+			.--hm_template_2>.content>.cell:first-of-type>.card{
+				box-shadow: 0px 8px 6px -6px #1a1a1a;
+			}
+			.--hm_template_2>.content>.cell:last-of-type>.card{
+				box-shadow: 0px 8px 6px -6px #1a1a1a;
+			}
+		}
+
+
+	/***** ================ *****/
+	/***** template_3 - Grid *****/
+	/***** ================ *****/
+		@media only screen and (max-width : 1100px){
+			.--hm_template_3>.content>.cell{
+				width: 33.333%;
+			}
+		}
+
+		@media only screen and (max-width : 950px){
+			.--hm_template_3>.content>.cell{
+				width: 100%;
+			}
+		}
+
+
+
+/********************************************
+
+MODALS
+
+********************************************/
+	
+	/***** Standard *****/
+		@media only screen and (max-width : 650px){
+			.modal{
+				max-width: calc(100% - 50px);
+			}
+			.modal >.modal_close.main{
+				top: 0px;
+				right: 0px;
+				border-radius: 0;
+				height: 35px;
+				width: 35px;
+			}
+		}
+
+
+
+/********************************************
+
+NOTICES / BANNERS / WARNINGS
+
+********************************************/
+
+	/***** Cookie Notice *****/
+		@media only screen and (max-width : 750px) {
+			#cookie_notice{
+				height: auto;
+				bottom: -500px;
+				transition: .75s ease-in-out;
+			}
+			#cookie_notice>.container{
+				flex-direction: column;
+			}
+			#cookie_notice>.container>.copy{
+				width: 100%;
+			}
+		}

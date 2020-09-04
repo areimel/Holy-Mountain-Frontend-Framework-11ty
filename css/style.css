@@ -1,0 +1,223 @@
+/********************************************
+
+NOTES
+	- 	This is the primary CSS file.  All code pertaining specifically to
+		this project should live in here.
+
+	RESOURCES
+		-	https://loremipsum.io/
+		- 	https://codepen.io/
+		- 	https://cdnjs.com/
+
+	HELP
+		- 	https://caniuse.com/
+		- 	https://css-tricks.com/
+
+	MISC. NOTES
+		- 	.clearfix - clearfix interferes with flexbox code, 
+			as the :after is treated as a normal child element.
+			Do not clearfix on a flex element.
+
+	  
+
+********************************************/
+
+/********************************************
+
+BASIC FRAMEWORK OVERRIDES
+	- 	Use this section to override basic things
+		like fonts, base font size, container width, etc.
+
+********************************************/
+	
+	/***** Fonts *****/
+		html {
+			font-family: var(--font_sans);
+			text-rendering: auto;
+			-webkit-font-smoothing: antialiased;
+		}
+
+		body {
+			font-size: 1.6rem;
+		}
+
+	/***** Container Width *****/
+		.container{
+			max-width: 1450px;
+		}
+	/***** List Styling *****/
+		/*ul>li:before{
+			content: '\f0da'; 
+		}*/
+
+/********************************************
+
+GENERAL 
+
+********************************************/
+
+	/***** Nav *****/
+			
+		#nav_desktop {display: block;}
+
+		#nav_mobile {display:none;}
+		
+		.nav{
+			background-color: var(--white_1);
+		}
+		.nav>.container{
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+		.nav .logo{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.nav .nav_button{
+			cursor: pointer;
+			font-size: 3rem;
+		}
+
+	/***** Sidebar *****/
+		#nav_overlay{
+			position: fixed;
+			height: 100%;
+			width: 100%;
+			background-color: rgba(25,25,25,0);
+			pointer-events: none;
+			z-index: 190;
+			transition: .5s ease-in-out;
+		}
+		#nav_overlay.active{
+			pointer-events: auto;
+			background-color: rgba(25,25,25,.5);
+		}
+
+		#nav_sidebar{
+			display: none; /* overridden in JS */
+			position: fixed;
+			top: 0;
+			right: 0;
+			z-index: 200;
+			width: 300px;
+			height: 100%;
+			padding-bottom: 100px;
+			transform: translate3d(300px,0px,0px);
+			background-color: var(--white_1);
+			transition: .5s ease-in-out;
+		}
+		#nav_sidebar.active{
+			transform: translate3d(0px,0px,0px);
+		}
+		
+		/***** Close Button *****/	
+			#nav_sidebar .nav_button{
+				position: absolute;
+				top: 5px;
+				left: 15px;
+				font-size: 3rem;
+			}
+
+		/***** Logo *****/	
+			#nav_sidebar .logo{
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+
+		/***** Links *****/	
+			#nav_sidebar .links{
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: flex-start;
+			}
+			#nav_sidebar .links>a{
+				width: 100%;
+				text-align: center;
+				padding: 35px 15px;
+				font-size: 2.4rem;
+				transition: .25s ease-in-out;
+			}
+			#nav_sidebar .links>a:hover{
+				background-color: #cecece;
+			}
+
+		/***** Social *****/	
+			#nav_sidebar .social{
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: space-around;
+				align-self: flex-end;
+				padding: 15px 35px;
+				height: 100px;
+			}
+			#nav_sidebar .social>a{
+				font-size: 2.4rem;
+				padding: 5px;
+				transition: .25s ease-in-out;
+			}
+			#nav_sidebar .social>a:hover{
+				color: #DF6C26;
+			}
+
+	/***** Footer *****/	
+		
+		#footer {
+			background-color: var(--white_1);
+		}
+		#footer>.container{
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+		#footer .logo{
+			display: inline-flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+	
+		
+
+		
+		
+
+
+
+
+
+/********************************************
+
+HOME PAGE
+
+********************************************/
+
+	/***** Hero *****/
+
+		.home_1 {
+			
+		}
+
+
+/********************************************
+
+INNER PAGES
+
+********************************************/
+
+
+
+
+/********************************************
+
+BLOG PAGES
+
+********************************************/
