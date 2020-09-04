@@ -33,7 +33,7 @@
 
 
 		<!-- SEO/TRACKING/ANALYTICS -->
-			{% include "head_seo.njk" %}
+			{% include "head/head_seo.njk" %}
 
 		<!-- Current page: {{ page.url | url }} -->
 
@@ -55,8 +55,8 @@
 			<div id="body_wrapper_inner">
 		
 			<!-- Desktop and Mobile navs -->
-				{% include "desktop_nav.njk" %}
-				{% include "mobile_nav.njk" %}
+				{% include "navigation/desktop_nav.njk" %}
+				{% include "navigation/mobile_nav.njk" %}
 
 
 
@@ -66,7 +66,7 @@
 				</div>
 
 			<!-- Footer / Sub Footer -->
-				{% include "footer.njk" %}
+				{% include "navigation/footer.njk" %}
 
 			</div>
 		</div>
@@ -95,7 +95,7 @@
 				-->
 
 		<!-- INTERNAL JS -->
-			 <script src="{{ '/js/script.js' | url }}"></script>
+			<script src="{{ '/js/script.js' | url }}"></script>
 			<script src="{{ '/js/holy_mountain_framework.js' | url }}" crossorigin="samesite"></script>
 
 

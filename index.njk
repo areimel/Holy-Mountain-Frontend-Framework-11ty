@@ -352,11 +352,15 @@ eleventyNavigation:
 		
 		<div class="copy">
 			<div class="inner">
+
 				<h2>
 					Template Form
 				</h2>
+
 				<p>This is a basic form that can be copied and re-styled.  It is using 3 custom form elements, as well, which are alternative versions to common form elements to allow for far more styling options than their traditional versions. Right now, we have custom select boxes, radio buttons, and checkboxes. They're all built using FontAwesome to control the glyphs in the form elements.</p>
-				<?echo $this->Element('forms/contact');?>
+				
+				{% include "forms/contact.njk" %}
+
 			</div>
 		</div>
 
@@ -556,7 +560,7 @@ eleventyNavigation:
 					ADA Compliance
 				</h2>
 				<p>Here's 2 forms, the Contact form from earlier, and a modified copy of it with no ADA compliance. With our ADA Compliance plugin, elements that fail to pass ADA are boldly highlighted in red so you can easily identify and take care of them. </p>
-				<?echo $this->Element('forms/contact');?>
+				{% include "forms/contact.njk" %}
 			</div>
 		</div>
 		
@@ -566,7 +570,7 @@ eleventyNavigation:
 					ADA Compliance
 				</h2>
 				<p>Because it highlights the error so boldly, it will help keep ADA in the front of your mind. Simply fix the ADA issue, and then the error styling goes away. This plugin is only loaded in a staging environment, so it won't affect live sites, and nothing has to be updated to turn it off.</p>
-				<?echo $this->Element('forms/contact_no_ada');?>
+				{% include "forms/contact_no_ada.njk" %}
 			</div>
 		</div>
 
