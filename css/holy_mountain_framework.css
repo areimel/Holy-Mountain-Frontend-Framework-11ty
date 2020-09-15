@@ -16,12 +16,12 @@ GENERAL
 
 ********************************************/
 	
-	/***** Root *****/
+	/***** ROOT *****/
 		:root{
 			font-size: 10px;
 		}
 
-	/***** Box-Size Reset *****/
+	/***** BOX-SIZE RESET *****/
 		html {
 		  box-sizing: border-box;
 		}
@@ -30,81 +30,99 @@ GENERAL
 		}
 
 		
-	
-	html {
-		font-family: var(--font_sans);
-		text-rendering: auto;  /* override this in the main css file - test what works best */
-		-webkit-font-smoothing: antialiased;
-	}
-	
-	html, body {
-		min-height: 100%;
-	}
-	
-	body {
-		padding: 0px;
-		width: 100%;
-		height: 100%;
-		font-size: 1.6rem;
-		letter-spacing: .5px;
-		line-height: 1.35;
-		color: #1a1a1a;
-		background-color: #fafafa;
-		overflow-x: hidden;
-	}
-
-	body,
-	h1, h2, h3, h4, h5, h6,
-	p, blockquote, pre,
-	dl, dd, ol, ul,
-	form, fieldset, legend,
-	table, th, td, caption,
-	hr {
-	  margin: 0;
-	  padding: 0; 
-	}
-
-	a {
-		text-decoration: none;
-		color: inherit;
-		cursor: pointer;
-	}
-	a:not([class]){
-		text-decoration: underline;
-	}
-	
-	img {
-		max-width: 100%;
-	}
-
-	ul{
+	/***** HTML/BODY *****/
+		html {
+			font-family: var(--font_sans);
+			text-rendering: auto;  /* override this in the main css file - test what works best */
+			-webkit-font-smoothing: antialiased;
+		}
 		
-		list-style: none;
-	}
-	ul>li{
-		margin-bottom: 5px;
-	}
-	ul>li:before{
-		font-family: "Font Awesome 5 Free";
-		font-weight: 900;
-		content: '\f0da';
-		padding-right: 10px;
-	}
+		html, body {
+			min-height: 100%;
+		}
+		
+		body {
+			padding: 0px;
+			width: 100%;
+			height: 100%;
+			font-size: 1.6rem;
+			letter-spacing: .5px;
+			line-height: 1.35;
+			color: var(--black_1);
+			background-color: var(--white_1);
+			overflow-x: hidden;
+		}
 
-	.clearfix:after {
-		display: block;
-		content: '';
-		clear:both;
-	}
+		body,
+		h1, h2, h3, h4, h5, h6,
+		p, blockquote, pre,
+		dl, dd, ol, ul,
+		form, fieldset, legend,
+		table, th, td, caption,
+		hr {
+			margin: 0;
+			padding: 0; 
+		}
 
-	.container {
-		max-width: 1450px;
-		width: 100%;
-		margin: 0 auto;
-		padding: 0 35px;
-		box-sizing: border-box;
-		position: relative;
-	}
+
+
+	/*****LINKS *****/
+		a {
+			text-decoration: none;
+			color: inherit;
+			cursor: pointer;
+		}
+
+		/***** fallback for unstyled links *****/
+			a:not([class]){
+				text-decoration: underline;
+			}
+
+
+
+	/*****IMAGES *****/
+		img {
+			max-width: 100%;
+			width: 100%;
+			height: auto;
+		}
+
+
+
+	/*****CLEARFIX *****/
+		.clearfix:after {
+			display: block;
+			content: '';
+			clear:both;
+		}
+
+
+
+	/***** CONTAINER *****/
+		.container {
+			max-width: 1450px;
+			width: 100%;
+			margin: 0 auto;
+			padding: 0 35px;
+			box-sizing: border-box;
+			position: relative;
+		}
+
+
+
+	/***** CUSTOM LIST STYLING  *****/
+		.--hm_custom_list{
+			list-style: none;
+		}
+		.--hm_custom_list>li{
+			margin-bottom: 5px;
+		}
+		.--hm_custom_list>li:before{
+			font-family: "Font Awesome 5 Free";
+			font-weight: 900;
+			content: '\f0da';
+			padding-right: 10px;
+		}
 
 /********************************************
 
@@ -143,7 +161,7 @@ BODY WRAPPER
 	
 	#body_wrapper{
 		z-index: 100;
-		background-color: #fafafa;
+		background-color: var(--white_1);
 		transition:.5s ease-in-out;
 		transform-origin: center;
 		perspective-origin: center;
@@ -202,17 +220,17 @@ GLOBAL TEMPLATE ELEMENTS
 			
 		}
 		.--hm_hero_1 .copy>.headline{
-			color: #fafafa;
+			color: var(--white_1);
 			font-size: 4.5rem;
 			margin-bottom: 0px;
 		}
 		.--hm_hero_1 .copy>.subhead{
-			color: #fafafa;
+			color: var(--white_1);
 			font-size: 3.6rem;
 			margin-bottom: 35px;
 		}
 		.--hm_hero_1 .copy>.body{
-			color: #fafafa;
+			color: var(--white_1);
 			font-size: 1.6rem;
 		}
 
@@ -305,22 +323,22 @@ GLOBAL TEMPLATE ELEMENTS
 
 
 			.--hm_template_2>.content>.cell>.card{
-				background-color: #fafafa;
+				background-color: var(--white_1);
 				padding: 15px 15px 100px 15px; /* extra 100px on bottom is to create safe zone for CTA */
 				display: flex;
 				flex-direction: column;
 				align-items: center;
 				justify-content: flex-start;
 				height: 100%;
-				box-shadow: 0 8px 6px -6px #1a1a1a;
+				box-shadow: 0 8px 6px -6px var(--black_1);
 				position: relative;
 			}
 			/***** First and Last variants *****/
 				.--hm_template_2.dynamic_shadow>.content>.cell:first-of-type>.card{
-					box-shadow: 6px 8px 6px -6px #1a1a1a;
+					box-shadow: 6px 8px 6px -6px var(--black_1);
 				}
 				.--hm_template_2.dynamic_shadow>.content>.cell:last-of-type>.card{
-					box-shadow: -6px 8px 6px -6px #1a1a1a;
+					box-shadow: -6px 8px 6px -6px var(--black_1);
 				}
 
 
@@ -392,7 +410,7 @@ GLOBAL TEMPLATE ELEMENTS
 			align-items: center;
 			justify-content: flex-start;
 			height: 100%;
-			box-shadow: 0 8px 6px -6px #1a1a1a;
+			box-shadow: 0 8px 6px -6px var(--black_1);
 			position: relative;
 		}
 
@@ -633,105 +651,116 @@ SLIDERS
 				position: relative;
 				left: -35px;
 				background-color: #f1f1f1;
-				box-shadow: -6px 8px 6px -6px #1a1a1a;
+				box-shadow: -6px 8px 6px -6px var(--black_1);
 			}
 
 /********************************************
 
 FORM ELEMENTS
 
+search key: --forms
+
 ********************************************/
 
-
-	/***** Form Content *****/
+	/***** ========== *****/
+	/***** BASIC FORM *****/
+	/***** ========== *****/
 		.--hm_form_1{
 			display: flex;
 			flex-wrap: wrap;
 		}
-		.--hm_form_1 .input_wrapper{
-			width: 100%;
-			padding: 5px;
-		}
-		.--hm_form_1 .input_wrapper.half{
-			width: 50%;
-		}
 
-		.--hm_form_1 .input_wrapper>input{
-			width: 100%;
-			border:solid 3px #fafafa;
-			background-color: #fafafa;
-			padding: 10px; /* padding + border = 10px, keeps things uniform */
-			transition: .25s ease-in-out;
-		}
-		.--hm_form_1 .input_wrapper>input:focus{
-			outline: none;
-			border:solid 3px #1a1a1a;
-		}
-		.--hm_form_1 .input_wrapper>input::placeholder{
-			opacity: 1;
-			color: #1a1a1a;
-		}
+		/***** input wrappers *****/
+			.--hm_form_1 .input_wrapper{
+				width: 100%;
+				padding: 5px;
+			}
+			.--hm_form_1 .input_wrapper.half{
+				width: 50%;
+			}
 
-		.--hm_form_1 .input_wrapper>textarea{
-			width: 100%;
-			border:solid 3px #fafafa;
-			background-color: #fafafa;
-			padding: 10px; /* padding + border = 10px, keeps things uniform */
-			transition: .25s ease-in-out;
-		}
-		.--hm_form_1 .input_wrapper>textarea:focus{
-			outline: none;
-			border:solid 3px #1a1a1a;
-		}
-		.--hm_form_1 .input_wrapper>textarea::placeholder{
-			opacity: 1;
-			color: #1a1a1a;
-		}
+		/***** inputs *****/
+			.--hm_form_1 .input_wrapper>input{
+				width: 100%;
+				border:solid 3px var(--white_1);
+				background-color: var(--white_1);
+				padding: 10px; /* padding + border = 10px, keeps things uniform */
+				transition: .25s ease-in-out;
+			}
+			.--hm_form_1 .input_wrapper>input:focus{
+				outline: none;
+				border:solid 3px var(--black_1);
+			}
+			.--hm_form_1 .input_wrapper>input::placeholder{
+				opacity: 1;
+				color: var(--black_1);
+			}
 
-		.--hm_form_1 .submit_wrapper{
-			width: 100%;
-			padding: 2px 5px;
-			display: flex;
-			align-items: center;
-			justify-content: flex-end;
-			position: relative;
-		}
-		.--hm_form_1 .submit_wrapper>input[type="submit"]{
-			display: inline-block;
-			background-color: #fafafa;
-			padding: 7px;
-			border:solid 3px #fafafa;
-			cursor: pointer;
-			transition: .25s ease-in-out;
-		}
-		.--hm_form_1 .submit_wrapper>input[type="submit"]:hover{
-			border: solid 3px #1a1a1a;
-		}
-		.--hm_form_1 .submit_wrapper>input[type="submit"].hidden{
-			height: 0px;
-			width: 0px;
-			opacity: 0;
-			position: absolute;
-			bottom: 0;
-			right: 0;
-		}
-		/***** Button variant *****/
-			/* 	
-				button triggers a JS click on the real submit,
-				be sure to include a submit button with the .hidden class 
-			*/
-			.--hm_form_1 .submit_wrapper>button.submit{
-				-webkit-appearance:none;
+		/***** textarea *****/
+			.--hm_form_1 .input_wrapper>textarea{
+				width: 100%;
+				border:solid 3px var(--white_1);
+				background-color: var(--white_1);
+				padding: 10px; /* padding + border = 10px, keeps things uniform */
+				margin-bottom: -5px; /* correcting mystery 5px at bottom */
+				transition: .25s ease-in-out;
+			}
+			.--hm_form_1 .input_wrapper>textarea:focus{
+				outline: none;
+				border:solid 3px var(--black_1);
+			}
+			.--hm_form_1 .input_wrapper>textarea::placeholder{
+				opacity: 1;
+				color: var(--black_1);
+			}
+
+
+		/***** submit *****/
+			.--hm_form_1 .submit_wrapper{
+				width: 100%;
+				padding: 2px 5px;
+				display: flex;
+				align-items: center;
+				justify-content: flex-end;
+				position: relative;
+			}
+			.--hm_form_1 .submit_wrapper>input[type="submit"]{
 				display: inline-block;
-				background-color: #fafafa;
+				background-color: var(--white_1);
 				padding: 7px;
-				border:solid 3px #fafafa;
+				border:solid 3px var(--white_1);
 				cursor: pointer;
 				transition: .25s ease-in-out;
 			}
-			.--hm_form_1 .submit_wrapper>button.submit:hover{
-				border: solid 3px #1a1a1a;
+			.--hm_form_1 .submit_wrapper>input[type="submit"]:hover{
+				border: solid 3px var(--black_1);
 			}
+			.--hm_form_1 .submit_wrapper>input[type="submit"].hidden{
+				height: 0px;
+				width: 0px;
+				opacity: 0;
+				position: absolute;
+				bottom: 0;
+				right: 0;
+			}
+
+			/***** Button variant *****/
+				/* 	
+					button triggers a JS click on the real submit,
+					be sure to include a submit button with the .hidden class 
+				*/
+				.--hm_form_1 .submit_wrapper>button.submit{
+					-webkit-appearance:none;
+					display: inline-block;
+					background-color: var(--white_1);
+					padding: 7px;
+					border:solid 3px var(--white_1);
+					cursor: pointer;
+					transition: .25s ease-in-out;
+				}
+				.--hm_form_1 .submit_wrapper>button.submit:hover{
+					border: solid 3px var(--black_1);
+				}
 
 
 
@@ -741,8 +770,8 @@ FORM ELEMENTS
 
 	/***** Custom Checkbox *****/
 		.custom_checkbox{
-			color: #1a1a1a;
-			background-color: #fafafa;
+			color: var(--black_1);
+			background-color: var(--white_1);
 			padding: 10px;
 			display: flex;
 			flex-direction: column;
@@ -774,11 +803,11 @@ FORM ELEMENTS
 				display: none;
 			}
 
-	/***** Custom Radio Button *****/
+	/***** CUSTOM RADIO BUTTON *****/
 		.custom_radio {
 			
-			color: #1a1a1a;
-			background-color: #fafafa;
+			color: var(--black_1);
+			background-color: var(--white_1);
 			padding: 10px;
 			display: flex;
 			flex-direction: column;
@@ -813,31 +842,32 @@ FORM ELEMENTS
 
 
 
-	/***** Custom Dropdown *****/
+	/***** CUSTOM DROPDOWN/SELECT *****/
 		
 		.custom_select {
-			background: #FAFAFA;
-			color: #1a1a1a;
+			background: var(--white_1);
+			color: var(--black_1);
 			display: flex;
 			flex-direction: column;
 			position: relative;
-			min-width: 250px;
+			width: 100%;
 			padding: 10px;
+			cursor: pointer;
 		}
 		.custom_select.active {
 			height: auto;
 		}
 		.custom_select .title {
 			z-index: 10;
-			background-color: #FAFAFA;
-			padding: 5px 10px;
+			background-color: var(--white_1);
+			padding: 0px 10px;
 			margin: auto;
 			display: flex;
 			align-items: center;
 			justify-content: center;
 		}
 		.custom_select .title i{
-			font-size: 3rem;
+			font-size: 1em;
 			padding-right: 10px;
 		}
 		.custom_select .dropdown {
@@ -846,11 +876,11 @@ FORM ELEMENTS
 			flex-direction: column;
 			position: absolute;
 			left: 0;
-			top: calc(100% + 5px);
-			background-color: #FAFAFA;
+			top: calc(100%);
+			background-color: var(--white_1);
 			width: 100%;
 			transform-origin: top;
-			transition: 0.15s ease-in-out;
+			transition: 0.25s ease-in-out;
 			max-height: 0;
 			height: auto;
 			overflow: auto;
@@ -869,29 +899,30 @@ FORM ELEMENTS
 			position: absolute;
 			left: 0;
 			bottom: 0;
-			cursor: pointer;
+			
 		}
 		.custom_select .dropdown label input[type="radio"]:hover + .content {
 			background-color: #CECECE;
 		}
 		.custom_select .dropdown label input[type="radio"]:checked + .content {
-			background-color: #CECECE;
+			background-color: #eaeaea;
 		}
 		.custom_select .dropdown label .content {
 			padding: 5px 10px;
 			display: flex;
 			justify-content: center;
 			align-items: center;
+			font-size: 1.4rem;
+			cursor: pointer;
 		}
 		.custom_select .dropdown label .content .icon {
 			display: inline-block;
 			width: 25px;
-			font-size: 3rem;
+			font-size: 1em;
 		}
 		.custom_select .dropdown label .content .copy {
 			width: calc(100% - 25px);
 			display: inline-block;
-			font-size: 14px;
 			padding-left: 15px;
 		}
 
@@ -962,14 +993,14 @@ MODALS
 			font-size: 20px;
 			border-radius: 100%;
 			box-sizing: border-box;
-			background-color: #fafafa;
+			background-color: var(--white_1);
 			color: #000;
-			border: solid 3px #fafafa;
+			border: solid 3px var(--white_1);
 			cursor: pointer;
 			transition: 0.25s ease-in-out;
 		}
 		.modal >.modal_close.main:hover {
-			border: solid 3px #1a1a1a;
+			border: solid 3px var(--black_1);
 		}
 
 		/***** Content *****/
@@ -1007,14 +1038,14 @@ MODALS
 
 			.modal form>.input_wrapper>input{
 				width: 100%;
-				border:solid 3px #fafafa;
-				background-color: #fafafa;
+				border:solid 3px var(--white_1);
+				background-color: var(--white_1);
 				padding: 7px; /* padding + border = 10px, keeps things uniform */
 				transition: .25s ease-in-out;
 			}
 			.modal form>.input_wrapper>input:focus{
 				outline: none;
-				border:solid 3px #1a1a1a;
+				border:solid 3px var(--black_1);
 			}
 			.modal form>.input_wrapper>input::placeholder{
 				opacity: 1;
@@ -1030,14 +1061,14 @@ MODALS
 			}
 			.modal form>.submit_wrapper>input[type="submit"]{
 				display: inline-block;
-				background-color: #fafafa;
+				background-color: var(--white_1);
 				padding: 7px;
-				border:solid 3px #fafafa;
+				border:solid 3px var(--white_1);
 				cursor: pointer;
 				transition: .25s ease-in-out;
 			}
 			.modal form>.submit_wrapper>input[type="submit"]:hover{
-				border: solid 3px #1a1a1a;
+				border: solid 3px var(--black_1);
 			}
 			.modal form>.submit_wrapper>input[type="submit"].hidden{
 				height: 0px;
@@ -1055,14 +1086,14 @@ MODALS
 				.modal form>.submit_wrapper>button.submit{
 					-webkit-appearance:none;
 					display: inline-block;
-					background-color: #fafafa;
+					background-color: var(--white_1);
 					padding: 7px;
-					border:solid 3px #fafafa;
+					border:solid 3px var(--white_1);
 					cursor: pointer;
 					transition: .25s ease-in-out;
 				}
 				.modal form>.submit_wrapper>button.submit:hover{
-					border: solid 3px #1a1a1a;
+					border: solid 3px var(--black_1);
 				}
 
 	/***** Video *****/
@@ -1149,7 +1180,7 @@ NOTICES / BANNERS / WARNINGS
 			max-width: 900px;
 		}
 		#cookie_notice>.container>.copy{
-			color: #fafafa;
+			color: var(--white_1);
 			width: calc(100% - 150px);
 			display: flex;
 			flex-direction: column;
@@ -1166,13 +1197,13 @@ NOTICES / BANNERS / WARNINGS
 		}
 
 		#cookie_notice>.container>.interaction{
-			color: #fafafa;
+			color: var(--white_1);
 			width: 150px;
 		}
 		#cookie_notice>.container>.interaction>.close{
 			padding: 15px;
 			font-size: 2.4rem;
-			color: #fafafa;
+			color: var(--white_1);
 			background-color: transparent;
 			display: flex;
 			justify-content: space-around;
@@ -1213,13 +1244,13 @@ NOTICES / BANNERS / WARNINGS
 
 		/***** Copy *****/
 			#ie_warning .copy>.headline{
-				color: #fafafa;
+				color: var(--white_1);
 				text-align: center;
 				font-weight: 600;
 				margin-bottom: 15px;
 			}
 			#ie_warning .copy>.body{
-				color: #fafafa;
+				color: var(--white_1);
 				text-align: center;
 				margin-bottom: 15px;
 			}
@@ -1231,7 +1262,7 @@ NOTICES / BANNERS / WARNINGS
 			}
 			#ie_warning .interaction>a{
 				display: inline-block;
-				color: #fafafa;
+				color: var(--white_1);
 				padding: 5px;
 				margin: 0 15px;
 			}
@@ -1300,8 +1331,8 @@ BUTTONS
 
 	/***** Button 4 *****/
 		.--hm_button_4 {
-			border: solid 3px #fafafa;
-			background-color: #fafafa;
+			border: solid 3px var(--white_1);
+			background-color: var(--white_1);
 			display: inline-block;
 			padding: 5px 15px;
 			cursor: pointer;
