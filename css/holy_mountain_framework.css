@@ -239,11 +239,14 @@ GLOBAL TEMPLATE ELEMENTS
 	/***** ==================================== *****/
 		.--hm_template_1{
 			display: flex;
+
+			--static_width: 800px;
 		}
+
 
 		/***** image *****/
 			.--hm_template_1>.image{
-				width: 800px;
+				width: var(--static_width);
 				background-size: cover;
 				background-repeat: no-repeat;
 				background-position: center;
@@ -251,15 +254,15 @@ GLOBAL TEMPLATE ELEMENTS
 
 		/***** copy *****/
 			.--hm_template_1>.copy{
-				width: calc(100% - 800px);
+				width: calc(100% - var(--static_width));
 				padding: 100px 35px;
 				display: flex;
 				align-items: center;
-				justify-content: center
+				justify-content: center;
 			}
 			.--hm_template_1>.copy>.inner{
 				width: 100%;
-				max-width: 500px;
+				max-width: 650px;
 				background-color: #ececec;
 				padding: 35px;
 			}
@@ -1281,7 +1284,8 @@ BUTTONS
 
 ********************************************/
 	
-	/***** Button 1 *****/
+	
+	/***** Button 1 - Color Change *****/
 		.--hm_button_1 {
 			border: solid 3px #000;
 			display: inline-block;
@@ -1292,11 +1296,9 @@ BUTTONS
 		.--hm_button_1:hover {
 			background-color: #999;
 			color: #fff;
-			transform: translate3d(-5px, -5px, 0);
-			box-shadow: 5px 5px rgba(0,0,0,0.75);
 		}
 
-	/***** Button 2 *****/
+	/***** Button 2 - 3D*****/
 		.--hm_button_2 {
 			border: solid 3px #000;
 			display: inline-block;
@@ -1307,9 +1309,11 @@ BUTTONS
 		.--hm_button_2:hover {
 			background-color: #999;
 			color: #fff;
+			transform: translate3d(-5px, -5px, 0);
+			box-shadow: 5px 5px rgba(0,0,0,0.75);
 		}
 
-	/***** Button 3 *****/
+	/***** Button 3 - Icon *****/
 		.--hm_button_3 {
 			border: solid 3px #000;
 			display: inline-block;
@@ -1329,7 +1333,7 @@ BUTTONS
 			transform: translate3d(5px,0,0);
 		}
 
-	/***** Button 4 *****/
+	/***** Button 4 - Border Change *****/
 		.--hm_button_4 {
 			border: solid 3px var(--white_1);
 			background-color: var(--white_1);

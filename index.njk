@@ -19,16 +19,20 @@ eleventyNavigation:
 <!-- Hero -->
 <section id="home_1" class=" --hm_hero_1" style="background-image: url('/img/boilerplate/hero-1.jpg');">
 	<div class="container">
+		
+		<!-- Hero Copy -->
 		<div class="copy">
+
 			<h1 class="headline">
-				WE CAN BE HEROES
+				The Holy Mountain
 			</h1>
 			<h2 class="subhead">
-				Just for one day
+				subhead
 			</h2>
 			<p class="body">
-				<em>-David Bowie</em>
+				body
 			</p>
+
 		</div>
 		
 	</div>
@@ -439,7 +443,7 @@ eleventyNavigation:
 			<div class="cell">
 				<div class="card">
 					<div class="headline">
-						<p>3D</p>
+						<p>Color Change</p>
 					</div>
 					<div class="body">
 						<p>
@@ -456,7 +460,7 @@ eleventyNavigation:
 			<div class="cell">
 				<div class="card">
 					<div class="headline">
-						<p>Color Change</p>
+						<p>3D</p>
 					</div>
 					<div class="body">
 						<p>
@@ -562,6 +566,8 @@ eleventyNavigation:
 					ADA Compliance
 				</h2>
 				<p>Here's 2 forms, the Contact form from earlier, and a modified copy of it with no ADA compliance. With our ADA Compliance plugin, elements that fail to pass ADA are boldly highlighted in red so you can easily identify and take care of them. </p>
+				
+				<!-- 11ty form call -->
 				{% include "forms/contact.njk" %}
 			</div>
 		</div>
@@ -569,9 +575,11 @@ eleventyNavigation:
 		<div class="cell">
 			<div class="inner">
 				<h2>
-					ADA Compliance
+					No ADA Compliance
 				</h2>
 				<p>Because it highlights the error so boldly, it will help keep ADA in the front of your mind. Simply fix the ADA issue, and then the error styling goes away. This plugin is only loaded in a staging environment, so it won't affect live sites, and nothing has to be updated to turn it off.</p>
+				
+				<!-- 11ty form call -->
 				{% include "forms/contact_no_ada.njk" %}
 			</div>
 		</div>
