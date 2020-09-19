@@ -27,10 +27,10 @@ eleventyNavigation:
 				The Holy Mountain
 			</h1>
 			<h2 class="subhead">
-				subhead
+				
 			</h2>
 			<p class="body">
-				body
+				.--hm_hero_1
 			</p>
 
 		</div>
@@ -39,22 +39,70 @@ eleventyNavigation:
 </section>
 <!-- Hero -->
 
+<!-- Content -->
+<section>
+	<div class="container">
+
+		<div class="--hm_template_7">
+			
+		</div>
+		
+		<div class="--hm_template_7" >
+				
+				<div class="cell">
+					<ul class="--hm_custom_list">
+						<li>test</li>
+						<li>test</li>
+						<li>test</li>
+					</ul>
+				</div>
+
+				<div class="cell">
+					<ul class="--hm_custom_list">
+						<li>test</li>
+						<li>test</li>
+						<li>test</li>
+					</ul>
+				</div>
+
+				<div class="cell">
+					<ul class="--hm_custom_list">
+						<li>test</li>
+						<li>test</li>
+						<li>test</li>
+					</ul>
+				</div>
+
+		</div>
+
+	</div>
+</section>
+<!-- Content -->
 
 
 <!-- Content -->
-<section id="home_2">
+<section id="">
 	
-	<div class="--hm_template_1">
+	<div class="--hm_template_1" >
 		
-		<div class="image" style="background-image: url('/img/boilerplate/placeholder-1.jpg');"></div>
-		
-		<div class="copy">
+		<div class="static_size" style="background-image: url('/img/boilerplate/placeholder-1.jpg');">
+			<!-- Comment out .inner element when you don't need it -->
+			<!--
 			<div class="inner">
-				<h2>
-					Template 1 Element
+				
+			</div>
+			-->
+		</div>
+		
+		<div class="dynamic_size">
+			<div class="inner">
+				<h2 class="headline">
+					.--hm_template_1
 				</h2>
-				<p>
-					This body element uses Flexbox and width:calc(); to achieve this layout.  Flexbox handles the row/column layout and keeps the 2 sections the same height, while width:calc(); allows us to set the image element to a static size, while the copy element gets a percent value, minus the static size of the image.  The order of the image/copy is determined by their order in the HTML, meaning that there is minimal code you'll need to change for the layout.  
+				<p class="body">
+					This template element is your standard 2 div side-by-side layout, but with a few twists.
+					<br/><br/>
+ 					Like all Holy Mountain Framework elements, it's been built with responsivity and eveloper ease of use in mind.
 				</p>
 			</div>
 		</div>
@@ -62,20 +110,45 @@ eleventyNavigation:
 	</div>
 
 
-	<div class="--hm_template_1 mobile_reverse">
+
+	<div class="--hm_template_1">
 		
-		<div class="copy">
+		
+		
+		<div class="dynamic_size">
 			<div class="inner">
-				<h2>
-					Template 1 Element
+				<h2 class="headline">
+					.--hm_template_1
 				</h2>
-				<p>
-					You can also use :first-of-type and :last-of-type as catch-all selectors for when the image or copy is in a certain order.  For example, .template_1>.copy:first-of-type>.inner would select the .inner element of the copy <em>only</em> when it appears first in the image/copy order.  This method is being used to make the .inner background colors different in this example.  In short - this method lets you write a few lines of CSS early on, and then you control your styling all through your HTML layout.
+				<p class="body">
+					This element is built on 3 main CSS concepts:
+					<ul class="--hm_custom_list">
+						<li>
+							Flexbox - to control the inner and outer layouts and keep both columns the same height while horizontal. 
+						</li>
+						<li>
+							CSS Variables - this is used to control set the value of the static  side, while simultaniously updating that number across your code.  Plus, these variables can be set inline, as they respect normal CSS inheritance. 
+						</li>
+						<li>
+							Calc() - the calc() function allows us to use the following code snippet: <span style="background: var(--black_1); color:var(--white_1";>width: calc(100% - var(--static_width));</span>.  This simple line of basic math gives you a seemless, dynamically-sized div to sit next to the fixed-sized element. 
+						</li>
+					</ul>
+					<br/><br/>
+					This copy of the hm_template_1 element has it's left/right styling handled by the main class - no extra CSS for reordering the contents.  It is, however, using the .mobile_reverse class to flip the contents when the responsive code kicks in.
 				</p>
 			</div>
 		</div>
 
-		<div class="image" style="background-image: url('/img/boilerplate/placeholder-1.jpg');"></div>
+		<div class="static_size" style="background-image: url('/img/boilerplate/placeholder-1.jpg');">
+			<div class="inner">
+				<h2 class="headline">
+					.--hm_template_1 - Static Side
+				</h2>
+				<p class="body">
+					You can have content in either side of this template element.  In fact, besides the width attributes, both sides are set up largely the same.  Feel free to set color or image backgrounds in either div.
+				</p>
+			</div>
+		</div>
 
 	</div>
 
@@ -86,7 +159,7 @@ eleventyNavigation:
 
 
 <!-- Content -->
-<section id="home_3">
+<section id="">
 	<div class="--hm_template_2">
 
 		<div class="headline container">
@@ -141,7 +214,7 @@ eleventyNavigation:
 
 
 <!-- Content -->
-<section id="home_4">
+<section id="">
 	<div class="--hm_template_2">
 
 		<div class="headline container">
@@ -212,13 +285,13 @@ eleventyNavigation:
 						</p>
 					</div>
 					<div class="cta">
-						<a href="https://css-tricks.com/" class="--hm_button_1 modal_open" data-modal="launch_checklist" aria-label="Form Modal Open">Form Modal</a>
+						<a href="https://css-tricks.com/" class="--hm_button_1 modal_open" data-modal="offsite" aria-label="Form Modal Open">Offsite Modal</a>
 					</div>
 					
 				</div>
 			</div>
 
-			<div class="cell">
+			<!--<div class="cell">
 				<div class="card">
 					<div class="headline">
 						<p>Launch Checklist Modal</p>
@@ -233,7 +306,7 @@ eleventyNavigation:
 					</div>
 					
 				</div>
-			</div>
+			</div>-->
 
 		</div>
 	</div>
@@ -243,7 +316,7 @@ eleventyNavigation:
 
 
 <!-- Content -->
-<section id="home_5">
+<section id="">
 	<div class="--hm_template_3">
 		<div class="headline container">
 			<h3>Template 3: Grid</h3>
@@ -276,7 +349,7 @@ eleventyNavigation:
 <!-- Content -->
 
 <!-- Content -->
-<section id="home_6">
+<section id="">
 	
 	<div class="--hm_template_6 container">
 		<div class="container">
@@ -350,7 +423,7 @@ eleventyNavigation:
 
 
 <!-- Content -->
-<section id="home_6">
+<section id="">
 	
 	<div class="--hm_template_1">
 		
@@ -377,7 +450,7 @@ eleventyNavigation:
 
 
 <!-- Content -->
-<section id="home_7">
+<section id="">
 	<div class="--hm_template_2 dynamic_shadows">
 
 		<div class="headline container">

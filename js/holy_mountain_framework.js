@@ -40,6 +40,9 @@ $(document).ready(function(){
 
 	//Sidebar Nav
 		$('#nav_sidebar').show();
+
+	//Data attr - apply to any elements you need
+		$('[data-unhide-after-load]').show();
 });
 
 
@@ -57,6 +60,7 @@ data-event="GAEvent" data-category="Home" data-label="CTA" data-action="Click" d
 	and pipes it through GTM and GA
 
 ********************************************/
+/*
 $(document).ready(function(){
 
 	$("[data-event='GAEvent']").click(function() {
@@ -82,6 +86,7 @@ $(document).ready(function(){
 			}
 	});
 });
+*/
 
 
 
@@ -94,9 +99,10 @@ GA EVENTS - PRESETS
 	when an event is often repeated, such as a commonly used CTA.
 
 ********************************************/
+/*
 $(document).ready(function(){
 
-	/***** Preset 1 *****/
+	
 		$("[GA-preset='preset-1']").click(function() {
 
 			window.dataLayer = window.dataLayer || [];
@@ -110,21 +116,8 @@ $(document).ready(function(){
 
 		});
 
-	/***** Preset 2 *****/
-		$("[GA-preset='preset-2']").click(function() {
-
-			window.dataLayer = window.dataLayer || [];
-			dataLayer.push({
-				'event': 'GAEvent',
-				'eventCategory': 'Preset',
-				'eventAction': 'Click',
-				'eventLabel': 'Preset-Label-2',
-				'eventValue': '',
-			});
-
-		});
 });
-
+*/
 
 
 
@@ -134,6 +127,7 @@ GA EVENTS - SCROLL
 	- Requires Scroll Magic JS
 
 ********************************************/
+/*
 $(document).ready(function(){
 
 	//HTML: <div class="gtm_scroll active" id="gtm_scroll_1" data-action="Scroll" data-category="News" data-event="GAEvent" data-label="scroll-test-1" data-value="undefined" data-offset="600">&nbsp;</div> 
@@ -176,7 +170,7 @@ $(document).ready(function(){
 
 	
 });
-
+*/
 
 
 /********************************************

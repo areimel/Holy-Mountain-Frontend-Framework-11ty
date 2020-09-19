@@ -113,15 +113,20 @@ GENERAL
 	/***** CUSTOM LIST STYLING  *****/
 		.--hm_custom_list{
 			list-style: none;
+			padding:0px 25px;
 		}
 		.--hm_custom_list>li{
 			margin-bottom: 5px;
+			position: relative;
 		}
 		.--hm_custom_list>li:before{
 			font-family: "Font Awesome 5 Free";
 			font-weight: 900;
 			content: '\f0da';
 			padding-right: 10px;
+			position: absolute;
+			top: 0px;
+			left: -15px;
 		}
 
 /********************************************
@@ -194,92 +199,143 @@ GLOBAL TEMPLATE ELEMENTS
 
 ********************************************/
 	
-	/***** Hero *****/
-		.--hm_hero_1{
-			background-size: cover;
-			background-repeat: no-repeat;
-			background-position: center center;
-			padding: 100px 0;
-			min-height: 600px;
-		}
-		.--hm_hero_1>.container{
-			height: 100%;
-			display: flex;
-			justify-content: flex-start;
-			align-items: flex-start;
-		}
+	/***** ============== *****/
+	/***** HERO ELEMENTS *****/
+	/***** ============== *****/
 
-		.--hm_hero_1 .copy{
-			padding: 35px;
-			position: relative;
-			backdrop-filter: blur(10px);
-			background-color: rgba(26, 26, 26,.8);
-			display: inline-block;
-			width: 100%;
-			max-width: 600px;
-			
-		}
-		.--hm_hero_1 .copy>.headline{
-			color: var(--white_1);
-			font-size: 4.5rem;
-			margin-bottom: 0px;
-		}
-		.--hm_hero_1 .copy>.subhead{
-			color: var(--white_1);
-			font-size: 3.6rem;
-			margin-bottom: 35px;
-		}
-		.--hm_hero_1 .copy>.body{
-			color: var(--white_1);
-			font-size: 1.6rem;
-		}
+		/***** Hero 1 *****/
+			.--hm_hero_1{
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-position: center center;
+				padding: 100px 0;
+				min-height: 600px;
+			}
+			.--hm_hero_1>.container{
+				height: 100%;
+				display: flex;
+				justify-content: flex-start;
+				align-items: flex-start;
+			}
 
-	/***** ==================================== *****/
-	/***** template_1 - image/copy side by side *****/
-	/***** ==================================== *****/
+			.--hm_hero_1 .copy{
+				padding: 35px;
+				position: relative;
+				backdrop-filter: blur(10px);
+				background-color: rgba(26, 26, 26,.8);
+				display: inline-block;
+				width: 100%;
+				max-width: 600px;
+				
+			}
+			.--hm_hero_1 .copy>.headline{
+				color: var(--white_1);
+				font-size: 4.5rem;
+				margin-bottom: 0px;
+			}
+			.--hm_hero_1 .copy>.subhead{
+				color: var(--white_1);
+				font-size: 3.6rem;
+				margin-bottom: 35px;
+			}
+			.--hm_hero_1 .copy>.body{
+				color: var(--white_1);
+				font-size: 1.6rem;
+			}
+
+	/***** ====================================== *****/
+	/***** hm_template_1 - image/copy side by side *****/
+	/***** ====================================== *****/
 		.--hm_template_1{
 			display: flex;
 
+			/* Set static width here, override in style.css file */
 			--static_width: 800px;
 		}
 
 
-		/***** image *****/
-			.--hm_template_1>.image{
-				width: var(--static_width);
+		/***** static size: this class styles the div with a fixed pixel size  *****/
+			.--hm_template_1>.static_size{
+				width: var(--static_width); /* sets the static size */
+				
+				padding: 100px 35px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+
 				background-size: cover;
 				background-repeat: no-repeat;
 				background-position: center;
 			}
 
-		/***** copy *****/
-			.--hm_template_1>.copy{
-				width: calc(100% - var(--static_width));
+			.--hm_template_1>.static_size>.inner{
+				width: 100%;
+				max-width: 650px;
+				background-color: #ececec;
+				padding: 35px 50px;
+			}
+			
+			
+
+			.--hm_template_1>.static_size>.inner>.headline{
+				/*margin-bottom: 15px;*/
+			}
+			.--hm_template_1>.static_size>.inner>.body{
+				margin: 15px 0;
+			}
+
+			/***** first/last of type modifiers *****/
+				.--hm_template_1>.static_size:first-of-type>{
+					/* when element is on the left side */
+				}
+				.--hm_template_1>.static_size:last-of-type>{
+					/* when element is on the right side */
+				}
+
+			/***** first/last of type modifiers *****/
+				.--hm_template_1>.static_size:first-of-type>{
+					/* when element is on the left side */
+				}
+				.--hm_template_1>.static_size:last-of-type>{
+					/* when element is on the right side */
+				}
+
+		/***** dynamic size: this class styles the div that fills the remaining space  *****/
+			.--hm_template_1>.dynamic_size{
+				width: calc(100% - var(--static_width)); /* sets the dynamic size */
+
 				padding: 100px 35px;
 				display: flex;
 				align-items: center;
 				justify-content: center;
+
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-position: center;
 			}
-			.--hm_template_1>.copy>.inner{
+			.--hm_template_1>.dynamic_size>.inner{
 				width: 100%;
 				max-width: 650px;
 				background-color: #ececec;
-				padding: 35px;
+				padding: 35px 50px;
 			}
 			
-			.--hm_template_1>.copy:first-of-type>.inner{
-				background-color: #ececec;
-			}
-			.--hm_template_1>.copy:last-of-type>.inner{
-				background-color: #cecece;
-			}
+			
 
-			.--hm_template_1>.copy>.inner>h2{
+			.--hm_template_1>.dynamic_size>.inner>.headline{
 				/*margin-bottom: 15px;*/
 			}
-			.--hm_template_1>.copy>.inner>p{
+			.--hm_template_1>.dynamic_size>.inner>.body{
 				margin: 15px 0;
 			}
+
+			/***** first/last of type modifiers *****/
+				.--hm_template_1>.dynamic_size:first-of-type>{
+					/* when element is on the left side */
+				}
+				.--hm_template_1>.dynamic_size:last-of-type>{
+					/* when element is on the right side */
+				}
 			
 
 
@@ -597,6 +653,29 @@ GLOBAL TEMPLATE ELEMENTS
 				font-weight: 600;
 				display:inline-block;
 			}
+
+
+
+	/***** ==================================== *****/
+	/***** template_7 - 3 column list *****/
+	/***** ==================================== *****/
+
+		/***** Layout *****/
+			.--hm_template_7{
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				padding: 35px 0px;
+			}
+
+		/***** Cells *****/
+			.--hm_template_7>.cell{
+				padding:35px;
+			}
+
+
+
+
 /********************************************
 
 SLIDERS
