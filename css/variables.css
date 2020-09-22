@@ -14,8 +14,8 @@ Variables File
  	Using CSS Variables means that a site ABSOLUTELY will not support IE.
 
  SYNTAX:
- 	Define: --variable_name: value;
- 	Use: 	color: var(--variable_name);
+ 	Define:		 --variable_name: value;
+ 	Use: 		color: var(--variable_name);
 
  NOTES:
  	Variables can be quickly implemented in a CSS file using Find/Replace
@@ -26,6 +26,7 @@ Variables File
 	/***** Color Variables *****/
 		--black_1: 	#101010;
 		--white_1: 		#fafafa;
+		--grey_1:		#ececec;
 
 
 	/***** Font Size Variables *****/
@@ -33,6 +34,11 @@ Variables File
 		--font_m: 		1.6rem;
 		--font_l: 		2.4rem;
 		--font_xl: 		4.5rem;
+
+	/***** Content Widths *****/
+		--content_width_s: 		650px;
+		--content_width_m: 		920px;
+		--content_width_l: 		1450px;
 
 	/***** Font Size Variables *****/
 		--font_monospace: 	'IBM Plex Mono', monospace;

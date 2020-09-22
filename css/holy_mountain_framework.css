@@ -359,29 +359,34 @@ GLOBAL TEMPLATE ELEMENTS
 			}
 
 
-		/***** Content *****/
+		/***** Content Layout *****/
 			.--hm_template_2>.content{
 				display: flex;
 				justify-content: center;
 				flex-wrap: wrap;
+
+				--columns: 4;
 			}
-			.--hm_template_2>.content>.cell{
-				width: 33.3%;
+
+		/***** Content Cells *****/
+			.--hm_template_2>.content>.cell_wrapper{
+				width: calc(100% / var(--columns));
 				display: flex;
 				align-items: center;
 				justify-content: center;
-				padding: 25px;
+				padding: 15px;
 			}
+			
 			/***** First and Last variants *****/
-				.--hm_template_2>.content>.cell:first-of-type{
+				.--hm_template_2>.content>.cell_wrapper:first-of-type{
 					
 				}
-				.--hm_template_2>.content>.cell:last-of-type{
+				.--hm_template_2>.content>.cell_wrapper:last-of-type{
 					
 				}
 
 
-			.--hm_template_2>.content>.cell>.card{
+			.--hm_template_2>.content>.cell_wrapper>.cell{
 				background-color: var(--white_1);
 				padding: 15px 15px 100px 15px; /* extra 100px on bottom is to create safe zone for CTA */
 				display: flex;
@@ -392,27 +397,20 @@ GLOBAL TEMPLATE ELEMENTS
 				box-shadow: 0 8px 6px -6px var(--black_1);
 				position: relative;
 			}
-			/***** First and Last variants *****/
-				.--hm_template_2.dynamic_shadow>.content>.cell:first-of-type>.card{
-					box-shadow: 6px 8px 6px -6px var(--black_1);
-				}
-				.--hm_template_2.dynamic_shadow>.content>.cell:last-of-type>.card{
-					box-shadow: -6px 8px 6px -6px var(--black_1);
-				}
-
-
-			.--hm_template_2>.content>.cell>.card>.headline{
+			
+		/***** Inner Content *****/
+			.--hm_template_2 .cell>.headline{
 				font-size: 3rem;
 				font-weight: 600;
 				padding: 0px 15px 15px; /* Extra padding lines up the headline with the cards */
 				border-bottom: solid 3px;
 				margin-bottom: 15px
 			}
-			.--hm_template_2>.content>.cell>.card>.body{
+			.--hm_template_2 .cell>.body{
 				font-size: 1.6rem;
-				margin-bottom: 15px
+				padding: 0px 15px 15px;
 			}
-			.--hm_template_2>.content>.cell>.card>.cta{
+			.--hm_template_2 .cell>.cta{
 				position: absolute;
 				bottom: 0;
 				left: 0;
@@ -497,9 +495,9 @@ GLOBAL TEMPLATE ELEMENTS
 		}
 
 
-	/***** ==================================== *****/
+	/***** =============================== *****/
 	/***** template_4 - generic 50/50 split *****/
-	/***** ==================================== *****/
+	/***** =============================== *****/
 		.--hm_template_4{
 			display: flex;
 			
@@ -656,21 +654,34 @@ GLOBAL TEMPLATE ELEMENTS
 
 
 
-	/***** ==================================== *****/
-	/***** template_7 - 3 column list *****/
-	/***** ==================================== *****/
+	/***** ============================== *****/
+	/***** template_7 - basic 3 column list *****/
+	/***** ============================== *****/
 
 		/***** Layout *****/
 			.--hm_template_7{
 				display: flex;
 				justify-content: center;
-				align-items: center;
+				align-items: flex-start;
 				padding: 35px 0px;
+
+				--cell_width: 300px;
 			}
 
 		/***** Cells *****/
-			.--hm_template_7>.cell{
-				padding:35px;
+			.--hm_template_7>.cell_wrapper{
+				width: var(--cell_width);
+				display: flex;
+				justify-content: center;
+				align-items: flex-start;
+				padding: 15px;
+				height: 100%;
+			}
+			.--hm_template_7>.cell_wrapper>.cell{
+				height: 100%; 
+				width: 100%;
+				padding:15px;
+				background-color: var(--grey_1);
 			}
 
 

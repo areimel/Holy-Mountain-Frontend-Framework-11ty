@@ -50,6 +50,8 @@ $(document).ready(function(){
 
 GA EVENTS - MAIN 
 
+Note - this is being moved to its own standalone plugin
+
 Example:
 
 data-event="GAEvent" data-category="Home" data-label="CTA" data-action="Click" data-value="undefined"
