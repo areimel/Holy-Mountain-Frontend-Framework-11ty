@@ -4,7 +4,7 @@ eleventyNavigation:
   key: Home
   order: 1
 ---
-
+<!--
 <h1>Latest 3 Posts</h1>
 
 {% set postslist = collections.posts | head(-4) %}
@@ -12,12 +12,12 @@ eleventyNavigation:
 {% include "postslist.njk" %}
 
 <p>More posts can be found in <a href="{{ '/posts/' | url }}">the archive</a>.</p>
-
+-->
 
 
 
 <!-- Hero -->
-<section id="home_1" class=" --hm_hero_1" style="background-image: url('/img/boilerplate/hero-1.jpg');">
+<section id="home_1" class=" --hm_hero_1" style="background-image: url('/img/hm-hero-img.png');">
 	<div class="container">
 		
 		<!-- Hero Copy -->
@@ -30,7 +30,7 @@ eleventyNavigation:
 				Frontend Framework
 			</h2>
 			<p class="body">
-				.--hm_hero_1
+				The philosophy behind the Holy Mountain framework is simple: everything should be straightforward, easy to understand, and easy to use. Or in the words of William S. Buroughs: "Do Easy".  Before you do something, simply take a moment to work out the easiest, most direct way to do said thing.  The result is code that you can easily build on top of, while having the framework take care of most of your basic frontend needs.
 			</p>
 
 		</div>
@@ -40,13 +40,15 @@ eleventyNavigation:
 <!-- Hero -->
 
 <!-- Content -->
-<section>
+<section class="--hm_section_1">
 	<div class="container">
 
-		<div class="--hm_template_">
-			<p>Overview</p>
-			<p>
-				The Holy Mountain Frontend Framework is built with Frontend Devs in mind.  It's meant to be an easy to use starting point for building sites, while providing you with a plethora of features and layouts that are commonly used.  It's also designed to easily sit on top of other, existing sites and frameworks, which can quickly bring old sites up to speed with modern standards. 
+		<div class="--hm_content_1">
+			<p class="heading">Overview</p>
+			<p class="copy">
+				The Holy Mountain Frontend Framework is built with Frontend Devs in mind.  It's meant to be an easy to use starting point for building sites, while providing you with a plethora of features and layouts that are commonly used.  It's also designed to easily sit on top of other, existing sites and frameworks, which can quickly bring old sites up to speed with modern standards and give you new tools to work with.
+				<br/><br/>
+				Holy Mountain's starter project, the thing you're looking at right now, is meant to be unopinionated and easy to customize.  Just like you, we hate clearing out a bunch of code that we don't want or need, so we try to keep things as clean and lightwieght as possible.  We're only using a handful of colors, the fonts are mostly generic (besides our personal favorite, Computerfont),  and the filler content we're using doubles as documentation.  It provides an easy reference to copy and paste code from
 			</p>
 		</div>
 		
@@ -58,7 +60,7 @@ eleventyNavigation:
 							<li>Responsive Code</li>
 							<li>CSS3 Variables</li>
 							<li>FlexBox</li>
-							<li>CSS Grid (coming soon)</li>
+							<li>CSS Grid Elements (coming soon)</li>
 						</ul>
 					</div>
 				</div>
@@ -112,7 +114,7 @@ eleventyNavigation:
 				<p class="body">
 					This template element is your standard 2 div side-by-side layout, but with a few twists.
 					<br/><br/>
- 					Like all Holy Mountain Framework elements, it's been built with responsivity and eveloper ease of use in mind.
+ 					Like all Holy Mountain Framework elements, it's been built with responsivity and developer ease of use in mind.
 				</p>
 			</div>
 		</div>
@@ -208,7 +210,7 @@ eleventyNavigation:
 				<div class="cell">
 					<p class="headline">Template 2 Card</p>
 					<p class="body">
-						Looking at the code, you should notice that we're not using 
+						Looking at the code, you should notice that we're not using the traditional Bootstrap style layout of using card elements with margins used for spacing them out.  Instead, we're using a layout that uses classes called .cell_wrapper and .cell.  
 					</p>
 					<div class="cta">
 						<a class="--hm_button_1" href="#" aria-label="Call to Action">CTA</a>
@@ -221,7 +223,7 @@ eleventyNavigation:
 				<div class="cell">
 					<p class="headline">Template 2 Card</p>
 					<p class="body">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+						This cell-style layout allows for a much cleaner, easier to use, and easier to understand setup.  The .cell_wrapper classes fit together seamlessly to set your columns, then use internal padding to control the spacing of the .cell elements, which contain the actual content.
 					</p>
 					<div class="cta">
 						<a class="--hm_button_1"  href="https://google.com"  aria-label="Call to Action">CTA</a>
@@ -377,7 +379,7 @@ eleventyNavigation:
 	<div class="--hm_template_6 container">
 		<div class="container">
 			<div class="headline ">
-				<h3 data-tooltip="Work In Progress">Sliders: Swiper JS</h3>
+				<h3 >Sliders: Swiper JS</h3>
 			</div>
 		</div>
 		
@@ -390,7 +392,7 @@ eleventyNavigation:
 			        <!-- Slides -->
 			        <div class="swiper-slide">
 			        	<div class="card">
-							<div class="image" style="background-image: url(https://source.unsplash.com/400x400/?tech);"></div>
+							<div class="image" style="background-image: url(https://source.unsplash.com/400x400/?dev);"></div>
 
 							<div class="copy">
 								<div class="inner">
@@ -416,7 +418,7 @@ eleventyNavigation:
 
 			        <div class="swiper-slide">
 			        	<div class="card">
-							<div class="image" style="background-image: url(https://source.unsplash.com/400x400/?code);"></div>
+							<div class="image" style="background-image: url(https://source.unsplash.com/400x400/?dev);"></div>
 
 							<div class="copy">
 								<div class="inner">
@@ -450,9 +452,9 @@ eleventyNavigation:
 	
 	<div class="--hm_template_1">
 		
-		<div class="image" style="background-image: url('https://source.unsplash.com/1000x1000/?music');"></div>
+		<div class="dynamic_size" style="background-image: url('https://source.unsplash.com/1000x1000/?music');"></div>
 		
-		<div class="copy">
+		<div class="static_size">
 			<div class="inner">
 
 				<h2>
@@ -474,7 +476,7 @@ eleventyNavigation:
 
 <!-- Content -->
 <section id="">
-	<div class="--hm_template_2 dynamic_shadows">
+	<div class="--hm_template_2">
 
 		<div class="headline container">
 			<h3>Menu - 3D Body Animations</h3>
@@ -482,8 +484,8 @@ eleventyNavigation:
 
 		<div class="content container">
 			
-			<div class="cell">
-				<div class="card">
+			<div class="cell_wrapper">
+				<div class="cell">
 					<p class="headline">3D Body Animations</p>
 					<p class="body">
 						These are modified versions of the sidebar menu button in the nav ( <i class="fas fa-bars"></i> ).  They apply an additional class the the body wrapper element, set by a data-attribute on the button.  This animates the inner content on the site.
@@ -495,8 +497,8 @@ eleventyNavigation:
 				</div>
 			</div>
 
-			<div class="cell">
-				<div class="card">
+			<div class="cell_wrapper">
+				<div class="cell">
 					<p class="headline">3D Body Animations</p>
 					<p class="body">
 						Keeping the inner body content wrapped inside a div allows it to be manipulated without moving the surrounding elements, such as sidebars, modals, notices, headers, etc.
@@ -508,8 +510,8 @@ eleventyNavigation:
 				</div>
 			</div>
 
-			<div class="cell">
-				<div class="card">
+			<div class="cell_wrapper">
+				<div class="cell">
 					<p class="headline">3D Body Animations</p>
 					<p class="body">
 						To apply this effect, simply add a data-attribute named 'data-body-transform' with a value of the animation you'd like to use.  The JS code is already set up to dynamically apply it.
@@ -619,25 +621,27 @@ eleventyNavigation:
 	
 	<div class="--hm_template_1">
 		
-		<div class="image" style="background-image: url('https://source.unsplash.com/1000x1000/?code');"></div>
+		<div class="dynamic_size" style="background-image: url('https://source.unsplash.com/1000x1000/?dev');"></div>
 		
-		<div class="copy">
+		<div class="static_size">
 			<div class="inner">
 				<h2>
 					Dynamic Placeholder Images
 				</h2>
 				<p>
 					Many of the placeholder images on this site are handled by Unsplash Source, which allows you to pull in images at whatever size you'd like, with various settings to allow you to pull images from different categories, users, tags, etc.
-					<br/>
+					<br/><br/>
 					Examples:
 				</p>
-				<ul>
+
+				<ul class="--hm_custom_list">
 					<li>https://source.unsplash.com/1000x1000/?code</li>
 					<li>https://source.unsplash.com/500x500/?dog</li>
 					<li>https://source.unsplash.com/1920x600/?nature</li>
 				</ul>
+				<br/>
 				<p>
-					Using these URLs to reference images will load up a random image matching the search parameters you set, and is then served up in the size you set.
+					Using these URLs to reference images will load up a random image matching the search and size parameters you set..
 					<br/><br/>
 					<a href="https://source.unsplash.com/" target="_blank" aria-label="Unsplash Source Link">https://source.unsplash.com/</a>
 				</p>

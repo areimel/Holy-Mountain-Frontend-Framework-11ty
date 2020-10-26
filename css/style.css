@@ -2,7 +2,7 @@
 
 NOTES
 	- 	This is the primary CSS file.  All code pertaining specifically to
-		this project should live in here.
+		this project should live in here.  Any changes
 
 	RESOURCES
 		-	https://loremipsum.io/
@@ -30,7 +30,9 @@ BASIC FRAMEWORK OVERRIDES
 
 ********************************************/
 	
+	/***** ===== *****/
 	/***** Fonts *****/
+	/***** ===== *****/
 		html {
 			font-family: var(--font_sans);
 			text-rendering: auto;
@@ -38,17 +40,39 @@ BASIC FRAMEWORK OVERRIDES
 		}
 
 		body {
-			font-size: 1.6rem;
+			font-size: 1.8rem;
 		}
 
+		/***** ========= *****/
+		/***** Add Fonts *****/
+		/***** ========= *****/
+			@font-face {
+				font-family: "Computerfont";
+				src: url("/css/fonts/Computerfont.ttf") format("ttf");
+				font-weight: 100;
+			}
+
+			:root{
+				--font_display: 'Computerfont', monospace;
+			}
+
+	/***** =============== *****/
 	/***** Container Width *****/
+	/***** =============== *****/
 		.container{
 			max-width: 1450px;
 		}
-	/***** List Styling *****/
+
+
+	/***** ==================  *****/
+	/***** Custom List Styling *****/
+	/***** ==================  *****/
 		/*ul>li:before{
 			content: '\f0da'; 
 		}*/
+
+
+
 
 /********************************************
 
@@ -56,7 +80,9 @@ GENERAL
 
 ********************************************/
 
+	/***** ===  *****/
 	/***** Nav *****/
+	/***** ===  *****/
 			
 		#nav_desktop {display: block;}
 
@@ -74,6 +100,13 @@ GENERAL
 			display: flex;
 			justify-content: center;
 			align-items: center;
+			padding: 5px;
+		}
+		.nav .logo>img{
+			
+			width: auto;;
+			height: 100%;
+			max-height: 120px;
 		}
 
 		.nav .nav_button{
@@ -81,7 +114,9 @@ GENERAL
 			font-size: 3rem;
 		}
 
+	/***** =======  *****/
 	/***** Sidebar *****/
+	/***** =======  *****/
 		#nav_overlay{
 			position: fixed;
 			height: 100%;
@@ -97,7 +132,6 @@ GENERAL
 		}
 
 		#nav_sidebar{
-			display: none; /* overridden in JS */
 			position: fixed;
 			top: 0;
 			right: 0;
@@ -168,8 +202,9 @@ GENERAL
 				color: #DF6C26;
 			}
 
+	/***** ====== *****/	
 	/***** Footer *****/	
-		
+	/***** ====== *****/		
 		#footer {
 			background-color: var(--white_1);
 		}
@@ -200,11 +235,23 @@ HOME PAGE
 
 ********************************************/
 
+	/***** ==== *****/
 	/***** Hero *****/
+	/***** ==== *****/
 
-		.home_1 {
-			
+		.--hm_hero_1{
+			background-position: center top;
 		}
+
+		/***** Content *****/
+			.--hm_hero_1 .headline{
+				font-family:  var(--font_display);
+				font-weight: 100;
+			}
+			.--hm_hero_1 .subhead{
+				font-family:  var(--font_display);
+				font-weight: 100;
+			}
 
 
 /********************************************

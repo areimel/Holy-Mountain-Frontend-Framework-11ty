@@ -17,7 +17,7 @@ LOADING SCREEN
 
 $(window).on("load", function() {
 	if($('#loading_screen').length){
-		$('#loading_screen').delay(1000).fadeOut('slow');
+		$('#loading_screen').delay(500).fadeOut('slow');
 	}
 });
 
@@ -32,14 +32,13 @@ UNHIDE AFTER LOAD
 		display:none in the CSS file, then use .show()
 		on them here.
 
+		HTML attr: data-unhide-after-load="true"
+
 ********************************************/
 $(document).ready(function(){
 	//Modals
 		$('.modal').show();
 		$('.modal_overlay').show();
-
-	//Sidebar Nav
-		$('#nav_sidebar').show();
 
 	//Data attr - apply to any elements you need
 		$('[data-unhide-after-load]').show();

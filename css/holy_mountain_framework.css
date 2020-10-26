@@ -16,12 +16,16 @@ GENERAL
 
 ********************************************/
 	
+	/***** ====  *****/
 	/***** ROOT *****/
+	/***** ====  *****/
 		:root{
 			font-size: 10px;
 		}
 
+	/***** ============== *****/
 	/***** BOX-SIZE RESET *****/
+	/***** ============== *****/
 		html {
 		  box-sizing: border-box;
 		}
@@ -30,7 +34,9 @@ GENERAL
 		}
 
 		
+	/***** ========== *****/
 	/***** HTML/BODY *****/
+	/***** ========== *****/
 		html {
 			font-family: var(--font_sans);
 			text-rendering: auto;  /* override this in the main css file - test what works best */
@@ -66,7 +72,9 @@ GENERAL
 
 
 
+	/*****===== *****/
 	/*****LINKS *****/
+	/*****===== *****/
 		a {
 			text-decoration: none;
 			color: inherit;
@@ -80,7 +88,9 @@ GENERAL
 
 
 
-	/*****IMAGES *****/
+	/*****======= *****/
+	/***** IMAGES  *****/
+	/*****======= *****/
 		img {
 			max-width: 100%;
 			width: 100%;
@@ -89,7 +99,9 @@ GENERAL
 
 
 
-	/*****CLEARFIX *****/
+	/***** ========  *****/
+	/***** CLEARFIX *****/
+	/***** ========  *****/
 		.clearfix:after {
 			display: block;
 			content: '';
@@ -98,7 +110,9 @@ GENERAL
 
 
 
-	/***** CONTAINER *****/
+	/***** ========== *****/
+	/***** CONTAINER  *****/
+	/***** ========== *****/
 		.container {
 			max-width: 1450px;
 			width: 100%;
@@ -108,26 +122,37 @@ GENERAL
 			position: relative;
 		}
 
+	/***** ============== *****/
+	/***** GRID CONTAINER *****/
+	/***** ============== *****/
+		.grid-container {
+			display: grid;
+			grid-template-columns: calc() 1450px calc();
+			grid-template-rows: repeat(3, 1fr);
+			gap: 0px 0px;
+			grid-template-areas:
+			"left main right"
+			"left main right"
+			"left main right";
+		}
+
+		.main { 
+			grid-area: main; 
+		}
+
+		.left { 
+			grid-area: left; 
+		}
+
+		.right { 
+			grid-area: right; 
+		}
 
 
-	/***** CUSTOM LIST STYLING  *****/
-		.--hm_custom_list{
-			list-style: none;
-			padding:0px 25px;
-		}
-		.--hm_custom_list>li{
-			margin-bottom: 5px;
-			position: relative;
-		}
-		.--hm_custom_list>li:before{
-			font-family: "Font Awesome 5 Free";
-			font-weight: 900;
-			content: '\f0da';
-			padding-right: 10px;
-			position: absolute;
-			top: 0px;
-			left: -15px;
-		}
+
+
+
+	
 
 /********************************************
 
@@ -154,7 +179,7 @@ LOADING SCREEN
 		margin-bottom: 50px;
 	}
 	#loading_screen > i{
-		font-size: 4.5rem;
+		font-size: var(--font_xl);
 	}
 
 
@@ -175,7 +200,9 @@ BODY WRAPPER
 		overflow-x: hidden;
 	}
 
+	/***** ============= *****/
 	/***** 3D Transforms *****/
+	/***** ============= *****/
 		#body_wrapper[data-body-transform="body_transform_1"]{
 			transform: translate3d(0px,0px,0px) scale(0.90);
 			box-shadow: 5px 5px 15px 15px rgba(0,0,0,0.5);
@@ -197,6 +224,14 @@ BODY WRAPPER
 
 GLOBAL TEMPLATE ELEMENTS
 
+search key: --templates
+
+Contents:
+	- Hero Elements
+	- Section Elements
+	- Layout Elements
+	- Content Elements
+
 ********************************************/
 	
 	/***** ============== *****/
@@ -214,180 +249,273 @@ GLOBAL TEMPLATE ELEMENTS
 			.--hm_hero_1>.container{
 				height: 100%;
 				display: flex;
-				justify-content: flex-start;
-				align-items: flex-start;
-			}
-
-			.--hm_hero_1 .copy{
-				padding: 35px;
-				position: relative;
-				backdrop-filter: blur(10px);
-				background-color: rgba(26, 26, 26,.8);
-				display: inline-block;
-				width: 100%;
-				max-width: 600px;
-				
-			}
-			.--hm_hero_1 .copy>.headline{
-				color: var(--white_1);
-				font-size: 4.5rem;
-				margin-bottom: 0px;
-			}
-			.--hm_hero_1 .copy>.subhead{
-				color: var(--white_1);
-				font-size: 3.6rem;
-				margin-bottom: 35px;
-			}
-			.--hm_hero_1 .copy>.body{
-				color: var(--white_1);
-				font-size: 1.6rem;
-			}
-
-	/***** ====================================== *****/
-	/***** hm_template_1 - image/copy side by side *****/
-	/***** ====================================== *****/
-		.--hm_template_1{
-			display: flex;
-
-			/* Set static width here, override in style.css file */
-			--static_width: 800px;
-		}
-
-
-		/***** static size: this class styles the div with a fixed pixel size  *****/
-			.--hm_template_1>.static_size{
-				width: var(--static_width); /* sets the static size */
-				
-				padding: 100px 35px;
-				display: flex;
-				align-items: center;
 				justify-content: center;
-
-				background-size: cover;
-				background-repeat: no-repeat;
-				background-position: center;
-			}
-
-			.--hm_template_1>.static_size>.inner{
-				width: 100%;
-				max-width: 650px;
-				background-color: #ececec;
-				padding: 35px 50px;
-			}
-			
-			
-
-			.--hm_template_1>.static_size>.inner>.headline{
-				/*margin-bottom: 15px;*/
-			}
-			.--hm_template_1>.static_size>.inner>.body{
-				margin: 15px 0;
-			}
-
-			/***** first/last of type modifiers *****/
-				.--hm_template_1>.static_size:first-of-type>{
-					/* when element is on the left side */
-				}
-				.--hm_template_1>.static_size:last-of-type>{
-					/* when element is on the right side */
-				}
-
-			/***** first/last of type modifiers *****/
-				.--hm_template_1>.static_size:first-of-type>{
-					/* when element is on the left side */
-				}
-				.--hm_template_1>.static_size:last-of-type>{
-					/* when element is on the right side */
-				}
-
-		/***** dynamic size: this class styles the div that fills the remaining space  *****/
-			.--hm_template_1>.dynamic_size{
-				width: calc(100% - var(--static_width)); /* sets the dynamic size */
-
-				padding: 100px 35px;
-				display: flex;
 				align-items: center;
-				justify-content: center;
-
-				background-size: cover;
-				background-repeat: no-repeat;
-				background-position: center;
 			}
-			.--hm_template_1>.dynamic_size>.inner{
+
+			/***** Content *****/
+				.--hm_hero_1 .copy{
+					padding: 35px;
+					position: relative;
+					backdrop-filter: blur(10px);
+					background-color: rgba(26, 26, 26,.75);
+					display: inline-block;
+					text-align: center;
+					box-shadow:  var(--nice_shadow);
+
+					max-width: 800px;
+				}
+				.--hm_hero_1 .copy>.headline{
+					color: var(--white_1);
+					font-size: 8.5rem;
+					margin-bottom:  -15px;
+				}
+				.--hm_hero_1 .copy>.subhead{
+					color: var(--white_1);
+					font-size: 3.6rem;
+					margin-bottom: 35px;
+				}
+				.--hm_hero_1 .copy>.body{
+					color: var(--white_1);
+					font-size: 1.8rem;
+					text-align: justify;
+				}
+
+	/***** ================= *****/
+	/***** SECTION ELEMENTS  *****/
+	/***** ================= *****/
+
+		/***** =========== *****/
+		/***** HM SECTION 1 *****/
+		/***** =========== *****/
+			.--hm_section_1{
 				width: 100%;
-				max-width: 650px;
-				background-color: #ececec;
-				padding: 35px 50px;
-			}
-			
-			
-
-			.--hm_template_1>.dynamic_size>.inner>.headline{
-				/*margin-bottom: 15px;*/
-			}
-			.--hm_template_1>.dynamic_size>.inner>.body{
-				margin: 15px 0;
+				padding: 35px 0;px;
 			}
 
-			/***** first/last of type modifiers *****/
-				.--hm_template_1>.dynamic_size:first-of-type>{
-					/* when element is on the left side */
-				}
-				.--hm_template_1>.dynamic_size:last-of-type>{
-					/* when element is on the right side */
-				}
-			
 
-
-	/***** ==================== *****/
-	/***** template_2 - 3 cards *****/
-	/***** ==================== *****/
-		.--hm_template_2{
-			background-color: #cecece;
-			padding: 50px 0 100px;
-		}
+	/***** ================ *****/
+	/***** LAYOUT ELEMENTS  *****/
+	/***** ================ *****/
 	
-		/***** headline *****/
-			.--hm_template_2>.headline{
-				padding: 0 60px;
-				margin-bottom: 15px;
-			}
-			.--hm_template_2>.headline>h3{
-				font-size: 4.5rem;
-				font-weight: 600;
-				display:inline-block;
-			}
-
-
-		/***** Content Layout *****/
-			.--hm_template_2>.content{
+		/***** ====================================== *****/
+		/***** hm_template_1 - image/copy side by side *****/
+		/***** ====================================== *****/
+			.--hm_template_1{
 				display: flex;
-				justify-content: center;
-				flex-wrap: wrap;
 
-				--columns: 4;
+				/* Set static width here, override in style.css file */
+				--static_width: 800px;
 			}
 
-		/***** Content Cells *****/
-			.--hm_template_2>.content>.cell_wrapper{
-				width: calc(100% / var(--columns));
+
+			/***** static size: this class styles the div with a fixed pixel size  *****/
+				.--hm_template_1>.static_size{
+					width: var(--static_width); /* sets the static size */
+					
+					padding: 100px 35px;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+
+					background-size: cover;
+					background-repeat: no-repeat;
+					background-position: center;
+				}
+
+				.--hm_template_1>.static_size>.inner{
+					width: 100%;
+					max-width: 650px;
+					background-color: #ececec;
+					padding: 35px 50px;
+				}
+				
+				
+
+				.--hm_template_1>.static_size>.inner>.headline{
+					/*margin-bottom: 15px;*/
+				}
+				.--hm_template_1>.static_size>.inner>.body{
+					margin: 15px 0;
+				}
+
+				/***** first/last of type modifiers *****/
+					.--hm_template_1>.static_size:first-of-type>{
+						/* when element is on the left side */
+					}
+					.--hm_template_1>.static_size:last-of-type>{
+						/* when element is on the right side */
+					}
+
+				/***** first/last of type modifiers *****/
+					.--hm_template_1>.static_size:first-of-type>{
+						/* when element is on the left side */
+					}
+					.--hm_template_1>.static_size:last-of-type>{
+						/* when element is on the right side */
+					}
+
+			/***** dynamic size: this class styles the div that fills the remaining space  *****/
+				.--hm_template_1>.dynamic_size{
+					width: calc(100% - var(--static_width)); /* sets the dynamic size */
+
+					padding: 100px 35px;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+
+					background-size: cover;
+					background-repeat: no-repeat;
+					background-position: center;
+				}
+				.--hm_template_1>.dynamic_size>.inner{
+					width: 100%;
+					max-width: 650px;
+					background-color: #ececec;
+					padding: 35px 50px;
+				}
+				
+				
+
+				.--hm_template_1>.dynamic_size>.inner>.headline{
+					/*margin-bottom: 15px;*/
+				}
+				.--hm_template_1>.dynamic_size>.inner>.body{
+					margin: 15px 0;
+				}
+
+				/***** first/last of type modifiers *****/
+					.--hm_template_1>.dynamic_size:first-of-type>{
+						/* when element is on the left side */
+					}
+					.--hm_template_1>.dynamic_size:last-of-type>{
+						/* when element is on the right side */
+					}
+				
+
+
+		/***** =================== *****/
+		/***** template_2 - cards *****/
+		/***** =================== *****/
+			.--hm_template_2{
+				background-color: #cecece;
+				padding: 50px 0 100px;
+			}
+		
+			/***** headline *****/
+				.--hm_template_2>.headline{
+					padding: 0 60px;
+					margin-bottom: 15px;
+				}
+				.--hm_template_2>.headline>h3{
+					font-size: var(--font_xl);
+					font-weight: 600;
+					display:inline-block;
+				}
+
+
+			/***** Content Layout *****/
+				.--hm_template_2>.content{
+					display: flex;
+					justify-content: center;
+					flex-wrap: wrap;
+
+					--columns: 4;
+				}
+
+			/***** Content Cells *****/
+				.--hm_template_2>.content>.cell_wrapper{
+					width: calc(100% / var(--columns));
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					padding: 15px;
+				}
+				
+				/***** First and Last variants *****/
+					.--hm_template_2>.content>.cell_wrapper:first-of-type{
+						
+					}
+					.--hm_template_2>.content>.cell_wrapper:last-of-type{
+						
+					}
+
+
+				.--hm_template_2>.content>.cell_wrapper>.cell{
+					background-color: var(--white_1);
+					padding: 15px 15px 100px 15px; /* extra 100px on bottom is to create safe zone for CTA */
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					justify-content: flex-start;
+					height: 100%;
+					box-shadow: 0 8px 6px -6px var(--black_1);
+					position: relative;
+				}
+				
+			/***** Inner Content *****/
+				.--hm_template_2 .cell>.headline{
+					font-size: 3rem;
+					font-weight: 600;
+					padding: 0px 15px 15px; /* Extra padding lines up the headline with the cards */
+					border-bottom: solid 3px;
+					margin-bottom: 15px
+				}
+				.--hm_template_2 .cell>.body{
+					font-size: 1.6rem;
+					padding: 0px 15px 15px;
+				}
+				.--hm_template_2 .cell>.cta{
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					width: 100%;
+					height: 100px;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+
+				}
+		
+		
+
+		/***** ================ *****/
+		/***** template_3 - Grid *****/
+		/***** ================ *****/
+			.--hm_template_3{
+				padding: 50px 0 100px;
+			}
+
+			/***** headline *****/
+				.--hm_template_3>.headline{
+					
+					margin-bottom: 15px;
+				}
+				.--hm_template_3>.headline>h3{
+					font-size: var(--font_xl);
+					font-weight: 600;
+					display:inline-block;
+				}
+
+			.--hm_template_3 .content{
+				display: flex;
+			}
+
+			.--hm_template_3>.content{
+				display: flex;
+				justify-content: flex-start;
+				flex-wrap: wrap;
+			}
+			.--hm_template_3>.content>.cell{
+				width: 25%;
 				display: flex;
 				align-items: center;
 				justify-content: center;
-				padding: 15px;
+				padding: 25px;
 			}
-			
-			/***** First and Last variants *****/
-				.--hm_template_2>.content>.cell_wrapper:first-of-type{
-					
-				}
-				.--hm_template_2>.content>.cell_wrapper:last-of-type{
-					
-				}
 
-
-			.--hm_template_2>.content>.cell_wrapper>.cell{
-				background-color: var(--white_1);
+			.--hm_template_3>.content>.cell>.card{
+				background-color: #ececec;
 				padding: 15px 15px 100px 15px; /* extra 100px on bottom is to create safe zone for CTA */
 				display: flex;
 				flex-direction: column;
@@ -397,20 +525,19 @@ GLOBAL TEMPLATE ELEMENTS
 				box-shadow: 0 8px 6px -6px var(--black_1);
 				position: relative;
 			}
-			
-		/***** Inner Content *****/
-			.--hm_template_2 .cell>.headline{
+
+			.--hm_template_3>.content>.cell>.card>.headline{
 				font-size: 3rem;
 				font-weight: 600;
 				padding: 0px 15px 15px; /* Extra padding lines up the headline with the cards */
 				border-bottom: solid 3px;
 				margin-bottom: 15px
 			}
-			.--hm_template_2 .cell>.body{
+			.--hm_template_3>.content>.cell>.card>.body{
 				font-size: 1.6rem;
-				padding: 0px 15px 15px;
+				margin-bottom: 15px;
 			}
-			.--hm_template_2 .cell>.cta{
+			.--hm_template_3>.content>.cell>.card>.cta{
 				position: absolute;
 				bottom: 0;
 				left: 0;
@@ -421,279 +548,251 @@ GLOBAL TEMPLATE ELEMENTS
 				align-items: center;
 
 			}
-	
-	
-
-	/***** ================ *****/
-	/***** template_3 - Grid *****/
-	/***** ================ *****/
-		.--hm_template_3{
-			padding: 50px 0 100px;
-		}
-
-		/***** headline *****/
-			.--hm_template_3>.headline{
-				
-				margin-bottom: 15px;
-			}
-			.--hm_template_3>.headline>h3{
-				font-size: 4.5rem;
-				font-weight: 600;
-				display:inline-block;
-			}
-
-		.--hm_template_3 .content{
-			display: flex;
-		}
-
-		.--hm_template_3>.content{
-			display: flex;
-			justify-content: flex-start;
-			flex-wrap: wrap;
-		}
-		.--hm_template_3>.content>.cell{
-			width: 25%;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			padding: 25px;
-		}
-
-		.--hm_template_3>.content>.cell>.card{
-			background-color: #ececec;
-			padding: 15px 15px 100px 15px; /* extra 100px on bottom is to create safe zone for CTA */
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: flex-start;
-			height: 100%;
-			box-shadow: 0 8px 6px -6px var(--black_1);
-			position: relative;
-		}
-
-		.--hm_template_3>.content>.cell>.card>.headline{
-			font-size: 3rem;
-			font-weight: 600;
-			padding: 0px 15px 15px; /* Extra padding lines up the headline with the cards */
-			border-bottom: solid 3px;
-			margin-bottom: 15px
-		}
-		.--hm_template_3>.content>.cell>.card>.body{
-			font-size: 1.6rem;
-			margin-bottom: 15px;
-		}
-		.--hm_template_3>.content>.cell>.card>.cta{
-			position: absolute;
-			bottom: 0;
-			left: 0;
-			width: 100%;
-			height: 100px;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-
-		}
 
 
-	/***** =============================== *****/
-	/***** template_4 - generic 50/50 split *****/
-	/***** =============================== *****/
-		.--hm_template_4{
-			display: flex;
-			
-		}
-
-		/***** headline *****/
-			.--hm_template_4>.headline{
-				
-				margin-bottom: 15px;
-			}
-			.--hm_template_4>.headline>h3{
-				font-size: 4.5rem;
-				font-weight: 600;
-				display:inline-block;
-			}
-
-		/***** cell *****/
-			.--hm_template_4>.cell{
-				width: 50%;
-				padding: 100px 35px;
+		/***** =============================== *****/
+		/***** template_4 - generic 50/50 split *****/
+		/***** =============================== *****/
+			.--hm_template_4{
 				display: flex;
-				align-items: center;
-				justify-content: center
-			}
-			.--hm_template_4>.cell>.inner{
-				width: 100%;
-				max-width: 500px;
-				background-color: #cecece;
-				padding: 35px;
-			}
-
-			.--hm_template_4>.cell>.inner>h2{
-				/*margin-bottom: 15px;*/
-			}
-			.--hm_template_4>.cell>.inner>p{
-				margin: 15px 0;
-			}
-
-
-	/***** ==================================== *****/
-	/***** template_5 - accordian *****/
-	/***** ==================================== *****/
-
-		.--hm_template_5{
-			padding: 100px 0px;
-		}
-
-		/***** headline *****/
-			.--hm_template_5>.headline{
 				
-				margin-bottom: 15px;
-			}
-			.--hm_template_5>.headline>h3{
-				font-size: 4.5rem;
-				font-weight: 600;
-				display:inline-block;
 			}
 
-		/***** content *****/
-			.--hm_template_5 .content>.cell{
-				width:100%;
-				
-				background-color: #fff;
-				box-shadow:
-				  0 1.7px 2.2px rgba(0, 0, 0, 0.02),
-				  0 4px 5.3px rgba(0, 0, 0, 0.028),
-				  0 7.5px 10px rgba(0, 0, 0, 0.035),
-				  0 13.4px 17.9px rgba(0, 0, 0, 0.042),
-				  0 25.1px 33.4px rgba(0, 0, 0, 0.05),
-				  0 60px 80px rgba(0, 0, 0, 0.07)
-				;
+			/***** headline *****/
+				.--hm_template_4>.headline{
+					
+					margin-bottom: 15px;
+				}
+				.--hm_template_4>.headline>h3{
+					font-size: var(--font_xl);
+					font-weight: 600;
+					display:inline-block;
+				}
 
-				transition: .25s ease-in-out;
-				margin-bottom: 35px;
-
-			}
-
-			.--hm_template_5 .content>.cell:hover{
-
-
-			}
-
-			/***** label *****/
-				.--hm_template_5 .content>.cell>.label{
+			/***** cell *****/
+				.--hm_template_4>.cell{
+					width: 50%;
+					padding: 100px 35px;
 					display: flex;
 					align-items: center;
-					justify-content: flex-start;
-					cursor: pointer;
+					justify-content: center
+				}
+				.--hm_template_4>.cell>.inner{
+					width: 100%;
+					max-width: 500px;
+					background-color: #cecece;
+					padding: 35px;
+				}
+
+				.--hm_template_4>.cell>.inner>h2{
+					/*margin-bottom: 15px;*/
+				}
+				.--hm_template_4>.cell>.inner>p{
+					margin: 15px 0;
+				}
+
+
+		/***** ==================================== *****/
+		/***** template_5 - accordian *****/
+		/***** ==================================== *****/
+
+			.--hm_template_5{
+				padding: 100px 0px;
+			}
+
+			/***** headline *****/
+				.--hm_template_5>.headline{
+					
+					margin-bottom: 15px;
+				}
+				.--hm_template_5>.headline>h3{
+					font-size: var(--font_xl);
+					font-weight: 600;
+					display:inline-block;
+				}
+
+			/***** content *****/
+				.--hm_template_5 .content>.cell{
+					width:100%;
+					
 					background-color: #fff;
-					color: #000;
-					padding: 35px 35px;
-				}
-				.--hm_template_5 .content>.cell>.label:hover{
+					box-shadow:
+					  0 1.7px 2.2px rgba(0, 0, 0, 0.02),
+					  0 4px 5.3px rgba(0, 0, 0, 0.028),
+					  0 7.5px 10px rgba(0, 0, 0, 0.035),
+					  0 13.4px 17.9px rgba(0, 0, 0, 0.042),
+					  0 25.1px 33.4px rgba(0, 0, 0, 0.05),
+					  0 60px 80px rgba(0, 0, 0, 0.07)
+					;
+
+					transition: .25s ease-in-out;
+					margin-bottom: 35px;
 
 				}
-				.--hm_template_5 .content>.cell>.label>.icon{
-					display: flex;
-					align-items: center;
-					justify-content: center;
-					border-radius: 100%;
-					width: 35px;
-					height: 35px;
-					margin-right: 35px;
-					background-color: #000;
-					color: #fff;
-					font-size: 1.8rem;
+
+				.--hm_template_5 .content>.cell:hover{
+
+
 				}
-				.--hm_template_5 .content>.cell>.label>.icon>.open{
-					display: block;
-					position: relative;
-					left: 1px;
-				}
-				.--hm_template_5 .content>.cell>.label>.icon>.close{
-					display: none;
-					position: relative;
-					left: 1px;
-				}
-				/***** active state *****/
-					.--hm_template_5 .content>.cell.active>.label>.icon>.open{
-						display: none;
+
+				/***** label *****/
+					.--hm_template_5 .content>.cell>.label{
+						display: flex;
+						align-items: center;
+						justify-content: flex-start;
+						cursor: pointer;
+						background-color: #fff;
+						color: #000;
+						padding: 35px 35px;
 					}
-					.--hm_template_5 .content>.cell.active>.label>.icon>.close{
+					.--hm_template_5 .content>.cell>.label:hover{
+
+					}
+					.--hm_template_5 .content>.cell>.label>.icon{
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						border-radius: 100%;
+						width: 35px;
+						height: 35px;
+						margin-right: 35px;
+						background-color: #000;
+						color: #fff;
+						font-size: 1.8rem;
+					}
+					.--hm_template_5 .content>.cell>.label>.icon>.open{
 						display: block;
+						position: relative;
+						left: 1px;
+					}
+					.--hm_template_5 .content>.cell>.label>.icon>.close{
+						display: none;
+						position: relative;
+						left: 1px;
+					}
+					/***** active state *****/
+						.--hm_template_5 .content>.cell.active>.label>.icon>.open{
+							display: none;
+						}
+						.--hm_template_5 .content>.cell.active>.label>.icon>.close{
+							display: block;
+						}
+
+					.--hm_template_5 .content>.cell>.label>.title{
+						font-size: 3.6rem;
+					}
+				
+				/***** copy *****/
+					.--hm_template_5 .content>.cell>.copy{
+						display: none;
+						padding: 15px 35px 35px;
+					}
+					.--hm_template_5 .content>.cell>.copy p{
+						font-size: 1.8rem;
 					}
 
-				.--hm_template_5 .content>.cell>.label>.title{
-					font-size: 3.6rem;
-				}
+
+
+		/***** ==================================== *****/
+		/***** template_6 - generic *****/
+		/***** ==================================== *****/
 			
-			/***** copy *****/
-				.--hm_template_5 .content>.cell>.copy{
-					display: none;
-					padding: 15px 35px 35px;
+			/***** headline *****/
+				.--hm_template_6 .headline{
+					margin-bottom: 15px;
 				}
-				.--hm_template_5 .content>.cell>.copy p{
-					font-size: 1.8rem;
+				.--hm_template_6 .headline>h3{
+					font-size: var(--font_xl);
+					font-weight: 600;
+					display:inline-block;
 				}
 
 
 
-	/***** ==================================== *****/
-	/***** template_6 - generic *****/
-	/***** ==================================== *****/
-		
-		/***** headline *****/
-			.--hm_template_6 .headline{
+		/***** ============================== *****/
+		/***** template_7 - basic 3 column list *****/
+		/***** ============================== *****/
+
+			/***** Layout *****/
+				.--hm_template_7{
+					display: flex;
+					justify-content: center;
+					align-items: stretch;
+					padding: 35px 0px;
+
+					/* Default value, override inline or in STYLE.CSS */
+					--cell_width: 450px;
+				}
+
+			/***** Cells *****/
+				.--hm_template_7>.cell_wrapper{
+					width: var(--cell_width);
+					display: flex;
+					justify-content: center;
+					padding: 15px;
+					
+				}
+				.--hm_template_7>.cell_wrapper>.cell{
+					height: 100%;
+					width: 100%;
+					padding:15px;
+					background-color: var(--grey_1);
+				}
+
+
+	/***** ================= *****/
+	/***** CONTENT ELEMENTS *****/
+	/***** ================= *****/
+
+		/***** ==================   *****/
+		/***** CUSTOM LIST STYLING  *****/
+		/***** ==================   *****/
+			.--hm_custom_list{
+				list-style: none;
+				padding:0px 25px;
+			}
+			.--hm_custom_list>li{
+				margin-bottom: 5px;
+				position: relative;
+			}
+			.--hm_custom_list>li:before{
+				font-family: "Font Awesome 5 Free";
+				font-weight: 900;
+				content: '\f0da';
+				
+				padding-right: 10px;
+				position: absolute;
+				top: 0px;
+				left: -15px;
+			}
+
+		/***** Content 1 *****/
+			.--hm_content_1{}
+			
+			.--hm_content_1 .heading{
+				font-size: var(--font_xl);	
+				display: inline-block;
 				margin-bottom: 15px;
 			}
-			.--hm_template_6 .headline>h3{
-				font-size: 4.5rem;
-				font-weight: 600;
-				display:inline-block;
+			.--hm_content_1 .copy{
+				font-size: 1.8rem;	
 			}
-
-
-
-	/***** ============================== *****/
-	/***** template_7 - basic 3 column list *****/
-	/***** ============================== *****/
-
-		/***** Layout *****/
-			.--hm_template_7{
-				display: flex;
-				justify-content: center;
-				align-items: flex-start;
-				padding: 35px 0px;
-
-				--cell_width: 300px;
-			}
-
-		/***** Cells *****/
-			.--hm_template_7>.cell_wrapper{
-				width: var(--cell_width);
-				display: flex;
-				justify-content: center;
-				align-items: flex-start;
-				padding: 15px;
-				height: 100%;
-			}
-			.--hm_template_7>.cell_wrapper>.cell{
-				height: 100%; 
-				width: 100%;
-				padding:15px;
-				background-color: var(--grey_1);
-			}
-
-
-
 
 /********************************************
 
 SLIDERS
 
+search key: --sliders
+
+Contents:
+	- Standard Slider
+	- Multi-Element Slider
+
 ********************************************/
 	
+	/***** ===============  *****/
 	/***** Standard Slider *****/
+	/***** ===============  *****/
 		.--hm_swiper_1{
 			overflow-x: hidden;
 		}
@@ -720,9 +819,6 @@ SLIDERS
 			  0 16.7px 33.4px rgba(0, 0, 0, 0.05),
 			  0 40px 80px rgba(0, 0, 0, 0.07)
 			;
-
-
-			
 		}
 		
 		/***** Image *****/
@@ -746,6 +842,13 @@ SLIDERS
 				background-color: #f1f1f1;
 				box-shadow: -6px 8px 6px -6px var(--black_1);
 			}
+
+
+	/***** ===============  *****/
+	/***** Standard Slider *****/
+	/***** ===============  *****/
+
+
 
 /********************************************
 
@@ -1025,6 +1128,8 @@ search key: --forms
 
 MODALS
 
+search key: --modals
+
 ********************************************/
 
 	/***** Overlay *****/
@@ -1247,6 +1352,8 @@ MODALS
 
 NOTICES / BANNERS / WARNINGS
 
+search key: --notices
+
 ********************************************/
 
 	/***** Cookie Notice *****/
@@ -1372,6 +1479,8 @@ NOTICES / BANNERS / WARNINGS
 
 BUTTONS
 
+search key: --buttons
+
 ********************************************/
 	
 	
@@ -1441,6 +1550,8 @@ BUTTONS
 
 TOOLTIPS
 
+search key: --tooltips
+
 ********************************************/
 
 	[data-tooltip] {
@@ -1486,6 +1597,8 @@ TOOLTIPS
 /********************************************
 
 404 PAGE
+
+search key: --404
 
 ********************************************/
 	.--hm_template_404>.container{

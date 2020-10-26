@@ -9,12 +9,12 @@ Variables File
  	- Pre-made CSS values
 
  WARNING: 	
- 	CSS Variables are not currently supported by Internet Explorer.
+ 	CSS Variables are not supported by Internet Explorer.
  	Please check: https://caniuse.com/#feat=css-variables
  	Using CSS Variables means that a site ABSOLUTELY will not support IE.
 
  SYNTAX:
- 	Define:		 --variable_name: value;
+ 	Define:		--variable_name: value;
  	Use: 		color: var(--variable_name);
 
  NOTES:
