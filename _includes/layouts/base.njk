@@ -3,18 +3,23 @@
 
 	<head>
 
+		<!-- =====  -->
 		<!-- METAS -->
+		<!-- =====  -->
 			<meta charset="utf-8">
 			<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 			<title>{{ renderData.title or title or metadata.title }}</title>
 			<meta name="Description" content="{{ renderData.description or description or metadata.description }}">
-			<link rel="icon" type="image/png" href="/favicon.png">
+
+			<link rel="icon" type="image/png" href="/img/favicon.png">
 
 			<link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
 
 
+		<!-- ============  -->
 		<!-- EXTERNAL CSS -->
+		<!-- ============  -->
 			<!-- Normalize -->
 			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" />
 
@@ -25,7 +30,9 @@
 			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css" integrity="sha256-DBYdrj7BxKM3slMeqBVWX2otx7x4eqoHRJCsSDJ0Nxw=" crossorigin="anonymous" />
 
 
+		<!-- ============ -->
 		<!-- INTERNAL CSS -->
+		<!-- ============ -->
 			
 			<!-- Variables -->
 			<link type="text/css" href="{{ '/css/variables.css' | url }}" media="all" rel="stylesheet" />
@@ -33,17 +40,23 @@
 			<!-- Framework -->
 			<link type="text/css" href="{{ '/css/holy_mountain_framework.css' | url }}" media="all" rel="stylesheet" />
 			<link type="text/css" href="{{ '/css/holy_mountain_framework_responsive.css' | url }}" media="all" rel="stylesheet" />
+			<link type="text/css" href="{{ '/css/holy_mountain_framework_functions.css' | url }}" media="all" rel="stylesheet" />
+
 			
 			<!-- Custom -->
 			<link type="text/css" href="{{ '/css/style.css' | url }}" media="all" rel="stylesheet" />
 			<link type="text/css" href="{{ '/css/style_responsive.css' | url }}" media="all" rel="stylesheet" />
 
 
+		<!-- ============  -->
 		<!-- GOOGLE FONTS -->
+		<!-- ============  -->
 			<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;700&family=Source+Sans+Pro:wght@300;400;700&family=Special+Elite&display=swap" rel="stylesheet">
 
 
+		<!-- =======================  -->
 		<!-- SEO/TRACKING/ANALYTICS -->
+		<!-- =======================  -->
 			{% include "head/head_seo.njk" %}
 
 		<!-- Current page: {{ page.url | url }} -->
@@ -55,38 +68,52 @@
 
 		
 
+		<!-- ===================================== -->
 		<!-- Loading Screen - comment out to disable -->
-			<!--{% include "loading_screen.njk" %}-->
+		<!-- ===================================== -->
+			 {% include "loading_screen.njk" %}
 
+		<!-- ==========================================  -->
 		<!-- Sidebar Nav - exists outside of body wrapper -->
+		<!-- ==========================================  -->
 			{% include "navigation/sidebar_nav.njk" %}
 
 
 		<div id="body_wrapper" data-body-transform="test">
 			<div id="body_wrapper_inner">
 		
+			<!-- ======================  -->
 			<!-- Desktop and Mobile navs -->
+			<!-- ======================  -->
 				{% include "navigation/desktop_nav.njk" %}
 				{% include "navigation/mobile_nav.njk" %}
 
 
 
+			<!-- ======= -->
 			<!-- Content -->
+			<!-- ======= -->
 				<div id="content_wrapper">
 					{{ content | safe }}
 				</div>
 
-			<!-- Footer / Sub Footer -->
+			<!-- =================== -->
+			<!--  Footer / Sub Footer -->
+			<!-- =================== -->
 				{% include "navigation/footer.njk" %}
 
 			</div>
 		</div>
 
 
+		<!-- ==================== -->
 		<!-- Global Modal Overlay -->
+		<!-- ==================== -->
 			<div class="modal_overlay"></div>
 
+		<!-- ======  -->
 		<!-- Modals -->
+		<!-- ======  -->
 			{% include "modals/thank_you_modal.njk" %}
 			{% include "modals/video_modal.njk" %}
 			{% include "modals/form_modal.njk" %}
@@ -94,7 +121,9 @@
 			{% include "modals/launch_checklist_modal.njk" %}
 
 
+		<!-- ======================================  -->
 		<!-- Browser detect and add class to document -->
+		<!-- ======================================  -->
 			<script>
 				var doc = document.documentElement;
 			        doc.setAttribute('data-useragent',  navigator.userAgent);
@@ -102,7 +131,9 @@
 			        doc.className += ((!!('ontouchstart' in window) || !!('onmsgesturechange' in window))?' touch':'');
 			</script>
 
+		<!-- ===========  -->
 		<!-- EXTERNAL JS -->
+		<!-- ===========  -->
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js" integrity="sha256-GaKOLXTn7uJXFuWp57ukQZGuKK2gWZWlEH16hc6jBU8=" crossorigin="anonymous"></script>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js" integrity="sha256-4sETKhh3aSyi6NRiA+qunPaTawqSMDQca/xLWu27Hg4=" crossorigin="anonymous"></script>
@@ -112,7 +143,9 @@
 				<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/jquery.ScrollMagic.min.js" integrity="sha256-vMplzCSo+pO4wcmz/as8FVtabF5gE9Gwqk5ER8jux3w=" crossorigin="anonymous"></script>
 				-->
 
+		<!-- =========== -->
 		<!-- INTERNAL JS -->
+		<!-- =========== -->
 			<script src="{{ '/js/script.js' | url }}"></script>
 			<script src="{{ '/js/holy_mountain_framework.js' | url }}" crossorigin="samesite"></script>
 

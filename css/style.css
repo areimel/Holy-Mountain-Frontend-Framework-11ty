@@ -60,6 +60,7 @@ BASIC FRAMEWORK OVERRIDES
 	/***** Container Width *****/
 	/***** =============== *****/
 		.container{
+			/* Set custom container width */
 			max-width: 1450px;
 		}
 
@@ -67,9 +68,13 @@ BASIC FRAMEWORK OVERRIDES
 	/***** ==================  *****/
 	/***** Custom List Styling *****/
 	/***** ==================  *****/
-		/*ul>li:before{
-			content: '\f0da'; 
-		}*/
+		.--hm_custom_list>li:before{
+			/* Set custom list icons */
+			content: '\f0da';
+			padding-right: 10px;
+			top: 0px;
+			left: -15px;
+		}
 
 
 

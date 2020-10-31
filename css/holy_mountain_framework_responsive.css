@@ -1,10 +1,17 @@
 /********************************************
 
+HOLY MOUNTAIN FRAMEWORK - Responsive framework CSS file
+
 NOTES
 
 	- This file is intended to be the basic underlying framework
 	for the site. Overrides to this code should be done 
 	in the style.css file.
+
+	- Breakpoints:
+		- 1350px
+		- 950px
+		- 550px
 
 
 	MEDIA QUERY EXAMPLES
@@ -14,15 +21,17 @@ NOTES
 ********************************************/
 
 
+
+
 /********************************************
 
-GLOBAL TEMPLATE ELEMENTS
+HM TEMPLATE ELEMENTS
 
 ********************************************/
 
-	/***** ==================================== *****/
+	/***** =================================== *****/
 	/***** template_1 - image/copy side by side *****/
-	/***** ==================================== *****/
+	/***** =================================== *****/
 		@media only screen and (max-width : 1350px){
 			.--hm_template_1>.image{
 				width: 500px;

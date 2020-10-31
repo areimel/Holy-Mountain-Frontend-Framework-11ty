@@ -1,5 +1,7 @@
 /********************************************
 
+HOLY MOUNTAIN FRAMEWORK - Primary framework CSS file
+
 NOTES
 
 	- This file is intended to be the basic underlying framework
@@ -125,27 +127,27 @@ GENERAL
 	/***** ============== *****/
 	/***** GRID CONTAINER *****/
 	/***** ============== *****/
-		.grid-container {
+		.grid_container {
 			display: grid;
 			grid-template-columns: calc() 1450px calc();
 			grid-template-rows: repeat(3, 1fr);
 			gap: 0px 0px;
 			grid-template-areas:
-			"left main right"
-			"left main right"
-			"left main right";
+				"grid-left grid-main grid-right";
 		}
 
-		.main { 
-			grid-area: main; 
+		.grid_container>.grid_container_main { 
+			grid-area: grid-main; 
+			padding: 0 35px;
+			max-width: 1450px;
 		}
 
-		.left { 
-			grid-area: left; 
+		.grid_container>.grid_container_left { 
+			grid-area: grid-left; 
 		}
 
-		.right { 
-			grid-area: right; 
+		.grid_container>.grid_container_right { 
+			grid-area: grid-right; 
 		}
 
 
@@ -158,6 +160,9 @@ GENERAL
 
 LOADING SCREEN
 
+NOTES:
+	- Comment/uncomment the #loading_screen HTML element to activate
+
 ********************************************/
 
 	#loading_screen{
@@ -167,19 +172,29 @@ LOADING SCREEN
 		overflow:hidden; 
 		top:0; 
 		left:0;
-		background-color: #DF6C26;
-		color: #fff;
+		background-color: var(--white_1);
 		z-index: 1000000;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
+		transition: var(--medium_transition);
+		transition-delay: 0.5s display;
+	}
+	#loading_screen.loading_complete{
+		transition-delay: 0.5s display;
+		opacity: 0;
+		pointer-events: none;
+		
 	}
 	#loading_screen > img{
 		margin-bottom: 50px;
+		max-width: 300px;
+		height: auto;
 	}
 	#loading_screen > i{
 		font-size: var(--font_xl);
+		color: var(--black_1);
 	}
 
 
@@ -529,7 +544,7 @@ Contents:
 			.--hm_template_3>.content>.cell>.card>.headline{
 				font-size: 3rem;
 				font-weight: 600;
-				padding: 0px 15px 15px; /* Extra padding lines up the headline with the cards */
+				padding: 0px 15px; /* Extra padding lines up the headline with the cards */
 				border-bottom: solid 3px;
 				margin-bottom: 15px
 			}
@@ -786,7 +801,7 @@ search key: --sliders
 
 Contents:
 	- Standard Slider
-	- Multi-Element Slider
+	- Multi-Element Slider (WIP)
 
 ********************************************/
 	
@@ -870,10 +885,14 @@ search key: --forms
 			.--hm_form_1 .input_wrapper{
 				width: 100%;
 				padding: 5px;
+				position: relative;
 			}
 			.--hm_form_1 .input_wrapper.half{
 				width: 50%;
 			}
+
+		/***** labels *****/
+
 
 		/***** inputs *****/
 			.--hm_form_1 .input_wrapper>input{
@@ -931,6 +950,8 @@ search key: --forms
 			.--hm_form_1 .submit_wrapper>input[type="submit"]:hover{
 				border: solid 3px var(--black_1);
 			}
+
+			/* .hidden -used with <button> variant below */
 			.--hm_form_1 .submit_wrapper>input[type="submit"].hidden{
 				height: 0px;
 				width: 0px;
@@ -939,6 +960,8 @@ search key: --forms
 				bottom: 0;
 				right: 0;
 			}
+
+			
 
 			/***** Button variant *****/
 				/* 	
@@ -956,6 +979,34 @@ search key: --forms
 				}
 				.--hm_form_1 .submit_wrapper>button.submit:hover{
 					border: solid 3px var(--black_1);
+				}
+
+			
+
+			/***** Fancy Label variant (WIP) *****/
+				/* 
+					label must have .fancy_label class 
+				*/
+				.--hm_form_1 .input_wrapper.fancy_label>.visual_label{
+					position: absolute;
+					left: 20px;
+					top:50%;
+					transform: translate3d(0,-50%,0);
+					pointer-events: none;
+					display: inline-block;
+					transition: var(--short_transition);
+				}
+
+
+				/***** Focus and Valid states *****/
+				.--hm_form_1 .input_wrapper.fancy_label>input:focus + .visual_label ,
+				.--hm_form_1 .input_wrapper.fancy_label>input:valid + .visual_label ,
+				.--hm_form_1 .input_wrapper.fancy_label>textarea:focus + .visual_label ,
+				.--hm_form_1 .input_wrapper.fancy_label>textarea:valid + .visual_label {
+					position: absolute;
+					left: 5px;
+					top:-5px;
+					transform: translate3d(0,0%,0) scale(.8);
 				}
 
 

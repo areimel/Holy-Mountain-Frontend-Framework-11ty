@@ -1,0 +1,51 @@
+/********************************************
+
+HOLY MOUNTAIN FRAMEWORK - Framework CSS functions
+
+NOTES
+
+	- This framework file is intended for more advanced CSS
+	functions that we feel shouldn't be spread out over separate 
+	normal	and _responsive.css files
+
+********************************************/
+	
+	/***** ============================ *****/
+	/*****  FlexBox data-attr functions  *****/
+	/***** ============================ *****/
+
+		/***** Rows *****/
+			[data-flex="row"]{
+				flex-direction: row;
+			}
+			[data-flex="row-reverse"]{
+				flex-direction: row-reverse;
+			}
+
+		/***** Columns *****/
+			[data-flex="column"]{
+				flex-direction: column;
+			}
+			[data-flex="column-reverse"]{
+				flex-direction: column-reverse;
+			}
+
+
+		@media only screen and (max-width : 1350px){
+
+			/***** Rows *****/
+				[data-flex-mobile="row"]{
+					flex-direction: row;
+				}
+				[data-flex-mobile="row-reverse"]{
+					flex-direction: row-reverse;
+				}
+
+			/***** Columns *****/
+				[data-flex-mobile="column"]{
+					flex-direction: column;
+				}
+				[data-flex-mobile="column-reverse"]{
+					flex-direction: column-reverse;
+				}
+		}
