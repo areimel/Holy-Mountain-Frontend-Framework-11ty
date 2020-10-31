@@ -1,7 +1,7 @@
 {
-  "name": "",
-  "version": "",
-  "description": "",
+  "name": "Holy-Mountain-Frontend-Framework-11ty",
+  "version": "0.1",
+  "description": "Frontend Framework by Alec Reimel",
   "scripts": {
     "build": "eleventy",
     "watch": "eleventy --watch",
@@ -10,12 +10,12 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/areimel/Holy-Mountain-Frontend-Framework-11ty.git"
   },
   "author": {
-    "name": "",
-    "email": "",
-    "url": ""
+    "name": "Alec Reimel",
+    "email": "alecreimel1@gmail.com",
+    "url": "https://alecreimel.com"
   },
   "license": "",
   "bugs": {
