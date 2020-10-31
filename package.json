@@ -3,9 +3,9 @@
   "version": "0.1",
   "description": "Frontend Framework by Alec Reimel",
   "scripts": {
-    "build": "npx eleventy",
-    "watch": "npx eleventy --watch",
-    "serve": "npx eleventy --serve",
+    "build": "eleventy",
+    "watch": "eleventy --watch",
+    "serve": "eleventy --serve",
     "debug": "DEBUG=* eleventy"
   },
   "repository": {
