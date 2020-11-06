@@ -1,4 +1,4 @@
-const { DateTime } = require("luxon");
+const { DateTime } = require("Luxon");
 const fs = require("fs");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
