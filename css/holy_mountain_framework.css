@@ -1355,8 +1355,8 @@ search key: --modals
 			z-index: 1001;
 			padding: 0px;
 			width: 100%;
-			max-width: 560px;
-			height: 315px;
+			max-width: 1120px;
+			height: 480px;
 			opacity: 0;
 			pointer-events: none;
 			transition: 0.5s ease-in-out;
